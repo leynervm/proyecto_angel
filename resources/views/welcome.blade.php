@@ -1,10 +1,9 @@
 <x-app-layout>
-
     <section class="w-full block my-20">
         <div class="max-w-6xl px-6 mx-auto">
             <div class="text-center max-w-3xl pb-20 mx-auto" data-aos="zoom-in">
-                <h2 class="text-5xl leading-10 font-semibold text-violet-700">Put clarity at the center of your
-                    website</h2>
+                <h2 class="text-5xl leading-10 font-semibold text-violet-700">
+                    Put clarity at the center of your website</h2>
             </div>
 
             <div class="w-full grid grid-cols-4 gap-5" data-aos-id-featbl="">
@@ -73,7 +72,7 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="w-full block">
         <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
             <div class="font-light text-gray-500 sm:text-lg">
                 <h2 class="mb-4 text-5xl leading-10 font-semibold text-violet-700" data-aos="zoom-in">
@@ -92,6 +91,170 @@
                 <img class="mt-4 w-full lg:mt-10 rounded-lg"
                     src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
                     alt="office content 2">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="w-full block">
+        <div class="gap-16 flex justify-between items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="relative w-40">
+                <div class="relative w-40 h-40">
+                    <div
+                        class="w-full h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 block" viewBox="0 0 24 24"
+                            fill="none">
+                            <path opacity="0.4"
+                                d="M14.4637 19.8949L14.5745 19.3164H9.43164L9.54248 19.8949C9.66368 20.5275 9.7243 20.8439 9.8601 21.0939C10.07 21.4804 10.4103 21.7715 10.8146 21.9106C11.076 22.0006 11.385 22.0006 12.003 22.0006C12.6211 22.0006 12.9302 22.0006 13.1916 21.9106C13.5959 21.7715 13.9361 21.4804 14.1461 21.0939C14.2819 20.8439 14.3425 20.5275 14.4637 19.8949Z"
+                                fill="#141B34" />
+                            <path opacity="0.4"
+                                d="M12.002 5.5C8.4121 5.5 5.50195 8.50233 5.50195 12.2059C5.50195 13.8177 6.50195 16 8.00195 18.0441L8.89297 17.1541H12.002H15.3347L16.002 18.0441C17.502 16 18.502 13.8523 18.502 12.2059C18.502 8.50233 15.5919 5.5 12.002 5.5Z"
+                                fill="#141B34" />
+                            <path
+                                d="M14.5194 19.3055C15.5298 18.9786 15.935 18.0538 16.049 17.1236C16.083 16.8458 15.8544 16.6152 15.5744 16.6152L8.4793 16.6154C8.1897 16.6155 7.95712 16.8612 7.9917 17.1488C8.10335 18.0771 8.38515 18.7553 9.4559 19.3055M14.5194 19.3055C14.5194 19.3055 9.63216 19.3055 9.4559 19.3055M14.5194 19.3055C14.3979 21.2505 13.8362 22.0207 12.0092 21.9991C10.055 22.0352 9.60548 21.0831 9.4559 19.3055"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M6.09133 15C5.71292 14.1494 5.50195 13.2031 5.50195 12.2059C5.50195 8.50233 8.4121 5.5 12.002 5.5C15.5919 5.5 18.502 8.50233 18.502 12.2059C18.502 13.2031 18.291 14.1494 17.9126 15"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M12.002 2V3" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M22.002 12H21.002" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3.00195 12H2.00195" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M19.0722 4.92969L18.3651 5.63679" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.63866 5.63671L4.93155 4.9296" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div
+                        class="w-full h-full rounded-full absolute  border-8 border-solid border-purple-500 border-r-transparent">
+                    </div>
+                </div>
+                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                    Ideas y soluciones innovadoras para tus problemas publicitarios.
+                </h1>
+            </div>
+
+            <div class="relative w-40">
+                <div class="relative w-40 h-40">
+                    <div
+                        class="w-full h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 block" viewBox="0 0 24 24"
+                            fill="none">
+                            <path opacity="0.4"
+                                d="M14.4637 19.8949L14.5745 19.3164H9.43164L9.54248 19.8949C9.66368 20.5275 9.7243 20.8439 9.8601 21.0939C10.07 21.4804 10.4103 21.7715 10.8146 21.9106C11.076 22.0006 11.385 22.0006 12.003 22.0006C12.6211 22.0006 12.9302 22.0006 13.1916 21.9106C13.5959 21.7715 13.9361 21.4804 14.1461 21.0939C14.2819 20.8439 14.3425 20.5275 14.4637 19.8949Z"
+                                fill="#141B34" />
+                            <path opacity="0.4"
+                                d="M12.002 5.5C8.4121 5.5 5.50195 8.50233 5.50195 12.2059C5.50195 13.8177 6.50195 16 8.00195 18.0441L8.89297 17.1541H12.002H15.3347L16.002 18.0441C17.502 16 18.502 13.8523 18.502 12.2059C18.502 8.50233 15.5919 5.5 12.002 5.5Z"
+                                fill="#141B34" />
+                            <path
+                                d="M14.5194 19.3055C15.5298 18.9786 15.935 18.0538 16.049 17.1236C16.083 16.8458 15.8544 16.6152 15.5744 16.6152L8.4793 16.6154C8.1897 16.6155 7.95712 16.8612 7.9917 17.1488C8.10335 18.0771 8.38515 18.7553 9.4559 19.3055M14.5194 19.3055C14.5194 19.3055 9.63216 19.3055 9.4559 19.3055M14.5194 19.3055C14.3979 21.2505 13.8362 22.0207 12.0092 21.9991C10.055 22.0352 9.60548 21.0831 9.4559 19.3055"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M6.09133 15C5.71292 14.1494 5.50195 13.2031 5.50195 12.2059C5.50195 8.50233 8.4121 5.5 12.002 5.5C15.5919 5.5 18.502 8.50233 18.502 12.2059C18.502 13.2031 18.291 14.1494 17.9126 15"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M12.002 2V3" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M22.002 12H21.002" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3.00195 12H2.00195" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M19.0722 4.92969L18.3651 5.63679" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.63866 5.63671L4.93155 4.9296" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div
+                        class="w-full h-full rounded-full absolute  border-8 border-solid border-purple-500 border-r-transparent">
+                    </div>
+                </div>
+                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                    Ideas y soluciones innovadoras para tus problemas publicitarios.
+                </h1>
+            </div>
+
+            <div class="relative w-40">
+                <div class="relative w-40 h-40">
+                    <div
+                        class="w-full h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 block" viewBox="0 0 24 24"
+                            fill="none">
+                            <path opacity="0.4"
+                                d="M14.4637 19.8949L14.5745 19.3164H9.43164L9.54248 19.8949C9.66368 20.5275 9.7243 20.8439 9.8601 21.0939C10.07 21.4804 10.4103 21.7715 10.8146 21.9106C11.076 22.0006 11.385 22.0006 12.003 22.0006C12.6211 22.0006 12.9302 22.0006 13.1916 21.9106C13.5959 21.7715 13.9361 21.4804 14.1461 21.0939C14.2819 20.8439 14.3425 20.5275 14.4637 19.8949Z"
+                                fill="#141B34" />
+                            <path opacity="0.4"
+                                d="M12.002 5.5C8.4121 5.5 5.50195 8.50233 5.50195 12.2059C5.50195 13.8177 6.50195 16 8.00195 18.0441L8.89297 17.1541H12.002H15.3347L16.002 18.0441C17.502 16 18.502 13.8523 18.502 12.2059C18.502 8.50233 15.5919 5.5 12.002 5.5Z"
+                                fill="#141B34" />
+                            <path
+                                d="M14.5194 19.3055C15.5298 18.9786 15.935 18.0538 16.049 17.1236C16.083 16.8458 15.8544 16.6152 15.5744 16.6152L8.4793 16.6154C8.1897 16.6155 7.95712 16.8612 7.9917 17.1488C8.10335 18.0771 8.38515 18.7553 9.4559 19.3055M14.5194 19.3055C14.5194 19.3055 9.63216 19.3055 9.4559 19.3055M14.5194 19.3055C14.3979 21.2505 13.8362 22.0207 12.0092 21.9991C10.055 22.0352 9.60548 21.0831 9.4559 19.3055"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M6.09133 15C5.71292 14.1494 5.50195 13.2031 5.50195 12.2059C5.50195 8.50233 8.4121 5.5 12.002 5.5C15.5919 5.5 18.502 8.50233 18.502 12.2059C18.502 13.2031 18.291 14.1494 17.9126 15"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M12.002 2V3" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M22.002 12H21.002" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3.00195 12H2.00195" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M19.0722 4.92969L18.3651 5.63679" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.63866 5.63671L4.93155 4.9296" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div
+                        class="w-full h-full rounded-full absolute  border-8 border-solid border-purple-500 border-r-transparent">
+                    </div>
+                </div>
+                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                    Ideas y soluciones innovadoras para tus problemas publicitarios.
+                </h1>
+            </div>
+
+            <div class="relative w-40">
+                <div class="relative w-40 h-40">
+                    <div
+                        class="w-full h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 block" viewBox="0 0 24 24"
+                            fill="none">
+                            <path opacity="0.4"
+                                d="M14.4637 19.8949L14.5745 19.3164H9.43164L9.54248 19.8949C9.66368 20.5275 9.7243 20.8439 9.8601 21.0939C10.07 21.4804 10.4103 21.7715 10.8146 21.9106C11.076 22.0006 11.385 22.0006 12.003 22.0006C12.6211 22.0006 12.9302 22.0006 13.1916 21.9106C13.5959 21.7715 13.9361 21.4804 14.1461 21.0939C14.2819 20.8439 14.3425 20.5275 14.4637 19.8949Z"
+                                fill="#141B34" />
+                            <path opacity="0.4"
+                                d="M12.002 5.5C8.4121 5.5 5.50195 8.50233 5.50195 12.2059C5.50195 13.8177 6.50195 16 8.00195 18.0441L8.89297 17.1541H12.002H15.3347L16.002 18.0441C17.502 16 18.502 13.8523 18.502 12.2059C18.502 8.50233 15.5919 5.5 12.002 5.5Z"
+                                fill="#141B34" />
+                            <path
+                                d="M14.5194 19.3055C15.5298 18.9786 15.935 18.0538 16.049 17.1236C16.083 16.8458 15.8544 16.6152 15.5744 16.6152L8.4793 16.6154C8.1897 16.6155 7.95712 16.8612 7.9917 17.1488C8.10335 18.0771 8.38515 18.7553 9.4559 19.3055M14.5194 19.3055C14.5194 19.3055 9.63216 19.3055 9.4559 19.3055M14.5194 19.3055C14.3979 21.2505 13.8362 22.0207 12.0092 21.9991C10.055 22.0352 9.60548 21.0831 9.4559 19.3055"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M6.09133 15C5.71292 14.1494 5.50195 13.2031 5.50195 12.2059C5.50195 8.50233 8.4121 5.5 12.002 5.5C15.5919 5.5 18.502 8.50233 18.502 12.2059C18.502 13.2031 18.291 14.1494 17.9126 15"
+                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M12.002 2V3" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M22.002 12H21.002" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3.00195 12H2.00195" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M19.0722 4.92969L18.3651 5.63679" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.63866 5.63671L4.93155 4.9296" stroke="#141B34" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div
+                        class="w-full h-full rounded-full absolute  border-8 border-solid border-purple-500 border-r-transparent">
+                    </div>
+                </div>
+                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                    Ideas y soluciones innovadoras para tus problemas publicitarios.
+                </h1>
             </div>
         </div>
     </section>

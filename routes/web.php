@@ -33,6 +33,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/orders', [HomeController::class, 'orders'])->name('orders');
