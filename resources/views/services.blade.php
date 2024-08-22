@@ -2,7 +2,7 @@
 
     <section class="block my-20" data-aos="zoom-in">
         <div class="w-full max-w-6xl px-6 mx-auto flex flex-col justify-center items-center">
-            <h2 class="text-5xl text-center font-semibold text-violet-700">
+            <h2 class="text-5xl text-center font-semibold text-blue-700">
                 Popular Services</h2>
             <p class="mt-4 text-center max-w-96 font-medium text-neutral-500">
                 Here are some of the most popular events
@@ -31,7 +31,7 @@
                             <p class="text-lg font-semibold text-black cursor-auto mb-3">
                                 S/. {{ $item->pricereferencial }}</p>
 
-                            <button @click="addcart(`{{ route('api.cart.add') }}`, '{{ $item->id }}')"
+                            <button @click="addcart(`{{ route('cart.add') }}`, '{{ $item->id }}')"
                                 class="ml-auto bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition ease duration-150">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
@@ -183,8 +183,8 @@
                     fetch(url, {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
-                                // 'Content-Type': '',
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
                             },
                             body: JSON.stringify(data)
                         })

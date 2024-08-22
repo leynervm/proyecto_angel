@@ -17,7 +17,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
-    
+
     @livewireStyles
 </head>
 
@@ -85,7 +85,7 @@
 
         <!-- Page Content -->
         <main>
-            @include('layouts.partials.slider')
+           
             <div class="fixed-whatsapp">
                 <div class="aba-whatsphone">
                     <div class="aba-whatsphone-icone">
@@ -107,17 +107,15 @@
     <script src="{{ asset('assets/sweetAlert2/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('assets/aos/aos.js') }}"></script>
 
+
+    <!-- Código de instalación Cliengo para services.test -->
     <script type="text/javascript">
         (function() {
             var ldk = document.createElement('script');
             ldk.type = 'text/javascript';
             ldk.async = true;
             ldk.src =
-<<<<<<< HEAD
-                'https://s.cliengo.com/weboptimizer/66c382e50d294f41222c2630/66c382e70d294f41222c2633.js?platform=dashboard';
-=======
-                'https://s.cliengo.com/weboptimizer/66c382e50d294f41222c2630/66c382e70d294f41222c2633.js?platform=dashboard_mail_webmaster';
->>>>>>> 4554abe5591bb0a7eb470dfda11836388ed344d2
+                'https://s.cliengo.com/weboptimizer/66c382e50d294f41222c2630/66c796954cfa490f088c22e6.js?platform=onboarding_modular';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ldk, s);
         })();

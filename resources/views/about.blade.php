@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
         <div class="mt-4" data-aos="zoom-in">
-            <h2 class="font-semibold text-violet-700 lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9">
+            <h2 class="font-semibold text-blue-700 lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9">
                 Frequently Asked Questions</h2>
             <p class="font-normal text-base leading-6 text-gray-600 lg:w-8/12 md:w-9/12">
                 Here are
