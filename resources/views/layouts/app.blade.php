@@ -110,6 +110,18 @@
     <script src="{{ asset('assets/sweetAlert2/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('assets/aos/aos.js') }}"></script>
 
+    <script type="text/javascript">
+        (function() {
+            var ldk = document.createElement('script');
+            ldk.type = 'text/javascript';
+            ldk.async = true;
+            ldk.src =
+                'https://s.cliengo.com/weboptimizer/66c382e50d294f41222c2630/66c382e70d294f41222c2633.js?platform=dashboard';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ldk, s);
+        })();
+    </script>
+
     <script>
         AOS.init();
 
