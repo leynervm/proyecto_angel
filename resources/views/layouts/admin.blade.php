@@ -16,15 +16,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Tilt+Neon&display=swap');
-
-        * {
-            font-family: "Kdam Thmor Pro", sans-serif;
-            font-weight: 300;
-            font-style: normal;
-        }
-    </style>
     @livewireStyles
 </head>
 

@@ -11,12 +11,12 @@
         </div>
     </section>
 
-    <section
+    <section x-data="cart"
         class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
 
         @foreach ($services as $item)
             <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-                <a href="#">
+                <div>
                     <img src="{{ $item->getImageURL() }}" alt="Product"
                         class="h-80 w-72 object-scale-down rounded-t-xl" />
                     <div class="px-4 py-3 w-72">
@@ -24,14 +24,15 @@
                         <p class="text-lg font-bold text-black block capitalize">
                             {{ $item->name }}</p>
 
-                        <p class="text-[10px] mt-2 text-gray-600 cursor-auto leading-3">
-                            PRECIO REFERENCIAL</p>
+                        {{-- <p class="text-[10px] mt-2 text-gray-600 cursor-auto leading-3">
+                            PRECIO REFERENCIAL</p> --}}
 
                         <div class="flex items-center">
-                            <p class="text-lg font-semibold text-black cursor-auto mb-3">S/.
-                                {{ $item->pricereferencial }}</p>
+                            <p class="text-lg font-semibold text-black cursor-auto mb-3">
+                                S/. {{ $item->pricereferencial }}</p>
 
-                            <div class="ml-auto">
+                            <button @click="addcart(`{{ route('api.cart.add') }}`, '{{ $item->id }}')"
+                                class="ml-auto bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition ease duration-150">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -39,10 +40,10 @@
                                     <path
                                         d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                                 </svg>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
         @endforeach
 
@@ -167,5 +168,43 @@
             </a>
         </div> --}}
     </section>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('cart', () => ({
+                init() {
+
+                },
+                addcart(url, service_id) {
+                    const data = {
+                        service_id: service_id
+                    }
+
+                    fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                                // 'Content-Type': '',
+                            },
+                            body: JSON.stringify(data)
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            // if (response.ok) {
+                            // response.blob().then(function(miBlob) {
+                            //     var objectURL = URL.createObjectURL(miBlob);
+                            //     miImagen.src = objectURL;
+                            // });
+                            // } else {
+                            //     console.log("Respuesta de red OK pero respuesta HTTP no OK");
+                            // }
+                        }).catch(function(error) {
+                            console.log("Hubo un problema con la petición Fetch:" + error.message);
+                        });
+                }
+            }))
+        })
+    </script>
 
 </x-app-layout>

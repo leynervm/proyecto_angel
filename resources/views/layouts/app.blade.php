@@ -17,15 +17,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Tilt+Neon&display=swap');
-
-        * {
-            font-family: "Kdam Thmor Pro", sans-serif;
-            font-weight: 300;
-            font-style: normal;
-        }
-    </style>
+    
     @livewireStyles
 </head>
 
@@ -61,6 +53,11 @@
                                 class="link-nav {{ request()->routeIs('about') ? 'link-active' : '' }}"
                                 style="text-underline-offset: 8px;">{{ __('About') }}</a>
                         </li>
+                        <li class="text-sm p-2">
+                            <a href="{{ route('cart') }}"
+                                class="link-nav {{ request()->routeIs('cart') ? 'link-active' : '' }}"
+                                style="text-underline-offset: 8px;">{{ __('Cart') }}</a>
+                        </li>
                         {{-- <li class="text-sm p-2">
                             <a href=""
                                 class="link-nav"
@@ -93,8 +90,8 @@
                 <div class="aba-whatsphone">
                     <div class="aba-whatsphone-icone">
                         <a target="_blank"
-                            href="https://api.whatsapp.com/send?phone=51928393901&text=Hola  deseo informacion acerca de mi pedido">
-                            Click aqui para <br><strong>consultar su pedido!</strong></a>
+                            href="https://api.whatsapp.com/send?phone=51928393901&text=Hola+necesito+mas+informacion">
+                            <strong>Escríbenos al WhatsApp!</strong></a>
                     </div>
                 </div>
             </div>
@@ -116,7 +113,11 @@
             ldk.type = 'text/javascript';
             ldk.async = true;
             ldk.src =
+<<<<<<< HEAD
                 'https://s.cliengo.com/weboptimizer/66c382e50d294f41222c2630/66c382e70d294f41222c2633.js?platform=dashboard';
+=======
+                'https://s.cliengo.com/weboptimizer/66c382e50d294f41222c2630/66c382e70d294f41222c2633.js?platform=dashboard_mail_webmaster';
+>>>>>>> 4554abe5591bb0a7eb470dfda11836388ed344d2
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ldk, s);
         })();
