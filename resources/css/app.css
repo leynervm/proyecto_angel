@@ -99,3 +99,17 @@
     font-size: 21px;
     margin-left: 70px;
 }
+
+
+#popupIframe,
+#chatIframe {
+    float: right !important;
+    left: auto !important;
+    right: 0vw !important;
+    bottom: 20px !important;
+}
+
+#clgo .expanded-height {
+    bottom: 0px !important;
+    right: 0 !important;
+}

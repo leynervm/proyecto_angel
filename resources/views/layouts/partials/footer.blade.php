@@ -2,7 +2,7 @@
     <div class="contenedor mx-auto">
         <div class="flex flex-wrap text-left lg:text-left">
             <div class="w-full lg:w-6/12 px-4">
-                <h4 class="text-3xl fonat-semibold text-gray-700">Name Company</h4>
+                <h4 class="text-3xl font-bold text-blue-700">PUBLICALIN</h4>
                 <h5 class="text-lg mt-0 mb-2 text-gray-600">
                     Líderes en el mercado
                 </h5>

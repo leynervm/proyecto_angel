@@ -1,8 +1,10 @@
 <x-app-layout>
+    @include('layouts.partials.slider')
+    
     <section class="w-full block my-20">
         <div class="max-w-6xl px-6 mx-auto">
             <div class="text-center max-w-3xl pb-20 mx-auto" data-aos="zoom-in">
-                <h2 class="text-5xl leading-10 font-semibold text-violet-700">
+                <h2 class="text-5xl leading-10 font-semibold text-blue-700">
                     Put clarity at the center of your website</h2>
             </div>
 
@@ -75,7 +77,7 @@
     <section class="w-full block">
         <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
             <div class="font-light text-gray-500 sm:text-lg">
-                <h2 class="mb-4 text-5xl leading-10 font-semibold text-violet-700" data-aos="zoom-in">
+                <h2 class="mb-4 text-5xl leading-10 font-semibold text-blue-700" data-aos="zoom-in">
                     We didn't reinvent the wheel</h2>
                 <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small
                     enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.
