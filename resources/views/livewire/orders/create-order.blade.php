@@ -1,4 +1,6 @@
 <div x-data="data">
+
+    {{-- ADD PHONE_NUMBER="51970412547" --}}
     <x-button wire:click="$set('open', true)">NUEVO PEDIDO</x-button>
 
     <x-dialog-modal wire:model="open" maxWidth="4xl" footerAlign="justify-end">
