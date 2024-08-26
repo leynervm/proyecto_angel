@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->text('detalle');
+            $table->unsignedInteger('cantidad');
+            $table->unsignedDecimal('price', 12, 2);
             $table->unsignedDecimal('amount', 12, 2);
+            $table->text('detalle');
             $table->unsignedBigInteger('service_id')->nullable();
             $table->unsignedBigInteger('order_id')->nullable();
             $table->foreign('service_id')->on('services')->references('id');

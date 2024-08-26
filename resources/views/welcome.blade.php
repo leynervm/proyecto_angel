@@ -1,6 +1,30 @@
 <x-app-layout>
     @include('layouts.partials.slider')
-    
+
+
+
+    <section class="w-full block">
+        <div class="flex gap-16 items-center justify-between py-8 px-4 mx-auto max-w-screen-xl">
+            <div class="flex-1 font-light text-gray-500 sm:text-lg max-w-lg">
+                <h2 class="mb-4 text-5xl leading-10 font-semibold text-blue-700" data-aos="zoom-in">
+                    We didn't reinvent the wheel</h2>
+                <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small
+                    enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.
+                    Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you
+                    need.</p>
+
+            </div>
+            <div class="w-72 mt-8">
+                {{-- <img class="w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+                    alt="office content 1"> --}}
+                <img class="mt-4 w-full rounded-lg h-72" src="{{ asset('assets/images/image.jpeg') }}"
+                    alt="office content 2">
+            </div>
+        </div>
+    </section>
+
+
     <section class="w-full block my-20">
         <div class="max-w-6xl px-6 mx-auto">
             <div class="text-center max-w-3xl pb-20 mx-auto" data-aos="zoom-in">
@@ -75,31 +99,8 @@
     </section>
 
     <section class="w-full block">
-        <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-            <div class="font-light text-gray-500 sm:text-lg">
-                <h2 class="mb-4 text-5xl leading-10 font-semibold text-blue-700" data-aos="zoom-in">
-                    We didn't reinvent the wheel</h2>
-                <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small
-                    enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.
-                    Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you
-                    need.</p>
-                <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be
-                    simple and quick.</p>
-            </div>
-            <div class="grid grid-cols-2 gap-4 mt-8">
-                <img class="w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
-                    alt="office content 1">
-                <img class="mt-4 w-full lg:mt-10 rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
-                    alt="office content 2">
-            </div>
-        </div>
-    </section>
-
-
-    <section class="w-full block">
-        <div class="gap-16 flex justify-between items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div
+            class="gap-16 flex flex-wrap justify-between items-center py-8 px-4 mx-auto max-w-6xl lg:py-16 lg:px-6">
             <div class="relative w-40">
                 <div class="relative w-40 h-40">
                     <div
@@ -261,13 +262,101 @@
         </div>
     </section>
 
-
-    {{-- <section class="block my-20" data-aos="zoom-in">
+    <section class="block my-20" data-aos="zoom-in">
         <div class="w-full max-w-6xl px-6 mx-auto flex flex-col justify-center items-center">
-            <h2 class="text-5xl text-center font-semibold text-violet-700">Popular Services</h2>
-            <p class="mt-4 text-center max-w-96 font-medium text-neutral-500">Here are some of the most popular events
-                in New York City curated by
-                professionals.</p>
-        </div>
-    </section> --}}
+            <h2 class="text-5xl text-center font-semibold text-blue-700">
+                Nuestros Clientes</h2>
+
+
+            <div class="w-full relative py-10 px-10">
+                <div class="w-full flex gap-10 overflow-x-hidden" id="sugerencias">
+                    @for ($i = 0; $i < 10; $i++)
+                        <div class="relative w-32 flex-shrink-0">
+                            <div class="relative w-full h-32">
+                                <div
+                                    class="w-full overflow-hidden h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
+                                    <img src="{{ asset('assets/images/image.jpeg') }}" alt="Product"
+                                        class="h-full w-full block object-cover overflow-hidden" />
+                                </div>
+                                <div
+                                    class="w-full h-full rounded-full absolute border-4 border-solid border-purple-500">
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+                </div>
+
+                <button id="leftsugerencias"
+                    class="absolute text-colorsubtitleform top-1/2 left-0 -translate-y-1/2 h-16 w-8 shadow flex items-center justify-center disabled:opacity-25">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 block">
+                        <path d="M15 7L10 12L15 17" />
+                    </svg>
+                </button>
+                <button id="rightsugerencias"
+                    class="absolute text-colorsubtitleform top-1/2 right-0 -translate-y-1/2 h-16 w-8 shadow flex items-center justify-center disabled:opacity-25">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 block">
+                        <path d="M10 7L15 12L10 17" />
+                    </svg>
+                </button>
+            </div>
+
+
+
+            {{-- grid grid-cols-[repeat(auto-fit,7rem)] grid-rows-[repeat(auto-fit,_100px)] --}}
+
+            {{-- <div
+                class="grid grid-flow-col auto-cols-[7rem] gap-10 overflow-hidden py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+
+                @for ($i = 0; $i < 10; $i++)
+                    <div class="relative w-28 flex-shrink-0">
+                        <div class="relative w-full h-28">
+                            <div
+                                class="w-full overflow-hidden h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
+                                <img src="{{ asset('assets/images/image.jpeg') }}" alt="Product"
+                                    class="h-full w-full block object-cover overflow-hidden" />
+                            </div>
+                            <div class="w-full h-full rounded-full absolute border-4 border-solid border-purple-500">
+                            </div>
+                        </div>
+                    </div>
+                @endfor
+            </div> --}}
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // $("#leftrecents, #leftsugerencias, #leftsimilares").prop('disabled', true);
+
+            let sugerencias = $("#sugerencias");
+            $("#rightsugerencias").click(() => hacerScroll(sugerencias));
+            $("#leftsugerencias").click(() => hacerScroll(sugerencias, '-'));
+            disabledButtons(sugerencias, '#leftsugerencias', '#rightsugerencias');
+
+            function hacerScroll(contenedor, type = "+") {
+                $(contenedor).animate({
+                    scrollLeft: type + '=' + Math.round($(contenedor).width())
+                }, 'slow');
+            }
+
+            function disabledButtons(contenedor, left, right) {
+                $(contenedor).scroll(function() {
+                    if ($(contenedor).scrollLeft() <= 0) {
+                        $(left).prop('disabled', true);
+                        $(right).prop('disabled', false);
+                    }
+
+                    if ($(contenedor).scrollLeft() >= $(contenedor).get(0).scrollWidth - $(contenedor)
+                        .width()) {
+                        $(right).prop('disabled', true);
+                        $(left).prop('disabled', false);
+                    }
+                });
+            }
+
+        })
+    </script>
+
+
 </x-app-layout>

@@ -29,6 +29,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('/orders', [AdminController::class, 'orders'])->name('dashboard.orders');
         Route::get('/services', [AdminController::class, 'services'])->name('dashboard.services');
         Route::get('/estados', [AdminController::class, 'estados'])->name('dashboard.estados');
+
+        Route::post('/json/services', [HomeController::class, 'jsonservices'])->name('dashboard.services.json');
+
     });
 
 
@@ -44,6 +47,8 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/orders', [HomeController::class, 'orders'])->name('orders');
 Route::get('/popular-services', [HomeController::class, 'services'])->name('services');
 Route::get('/estados', [HomeController::class, 'estados'])->name('estados');
+
+
 
 // Route::get('/prueba', function () {
 //     Cart::instance('shopping')->add('192ao12', 'Product 1', 1, 9.99);

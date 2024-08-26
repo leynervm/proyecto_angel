@@ -66,4 +66,18 @@ class HomeController extends Controller
 
         return response()->json($response);
     }
+
+    public function jsonservices()
+    {
+        $services = Service::orderBy('name', 'asc')->get()->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'name' => $item->name,
+                'price' => $item->pricereferencial,
+                'image_url' => $item->getImageURL(),
+            ];
+        });
+
+        return response()->json($services);
+    }
 }

@@ -87,7 +87,7 @@
                                 <span>{{ Cart::instance('shopping')->subtotal() }}</span>
                             </div>
                             <x-button class="block w-full !p-4 !text-center items-center justify-center text-sm">
-                                COMPRAR
+                                COTIZAR PEDIDO
                             </x-button>
                         </div>
                     </div>

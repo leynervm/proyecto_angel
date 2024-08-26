@@ -1,11 +1,11 @@
 <x-admin-layout>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto p-1 sm:p-0 flex flex-col gap-5">
+        <div class="w-full max-w-6xl mx-auto p-1 flex flex-col gap-5">
             <div>
-                <livewire:services.create-service />
+                <livewire:orders.create-order />
             </div>
             <div>
-                <livewire:services.show-services />
+                <livewire:orders.show-orders />
             </div>
         </div>
     </div>
