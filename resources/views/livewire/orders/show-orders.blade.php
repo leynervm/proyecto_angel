@@ -1,4 +1,4 @@
-<div x-data="editservice()">
+<div>
     @if ($orders->hasPages())
         <div class="w-full">
             {{ $orders->links() }}
@@ -17,16 +17,17 @@
 
         @foreach ($orders as $item)
             <tr>
-                <td class="p-2">
+                <td class="p-2 uppercase">
                     N°-{{ $item->id }}
                     <br>
-                    {{ $item->date }}
+                    {{ \Carbon\Carbon::parse($item->date)->translatedFormat('l, d \d\e F \d\e Y') }} <br>
+                    {{ \Carbon\Carbon::parse($item->date)->translatedFormat('h:i A') }}
                 </td>
                 <td class="p-2">
                     {{ $item->name }} <br> {{ $item->document }}
                 </td>
-                <td class="p-2 text-center">
-                    {{ $item->fechaentrega }}
+                <td class="p-2 text-center uppercase">
+                    {{ \Carbon\Carbon::parse($item->fechaentrega)->translatedFormat('l, d \d\e F \d\e Y') }}
                 </td>
                 <td class="p-2 text-center">
                     {{ number_format($item->amount, 2, '.', ', ') }}

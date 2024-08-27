@@ -28,4 +28,20 @@ class Order extends Model
     {
         return $this->hasMany(Item::class);
     }
+
+    public function trackings(): HasMany
+    {
+        return $this->hasMany(Tracking::class);
+    }
+
+    public function isFinish()
+    {
+        return $this->trackings()->whereHas('estado', function ($query) {
+            $query->where('finish', Estado::FINISH);
+        })->exists();
+
+        // return $this->trackings()->get()->map(function ($tracking) {
+        //     return $tracking->estado->isFinish() == true;
+        // });
+    }
 }
