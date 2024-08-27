@@ -12,10 +12,7 @@ class AdminController extends Controller
         return view('dashboard');
     }
 
-    public function orders()
-    {
-        return view('admin.orders.index');
-    }
+   
 
     public function services()
     {

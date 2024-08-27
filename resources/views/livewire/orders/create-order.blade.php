@@ -13,7 +13,7 @@
                 <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                     <div class="">
                         <x-label value="DOCUMENTO CLIENTE :" />
-                        <x-input class="block w-full" wire:model.defer="document" />
+                        <x-input class="block w-full" wire:model.defer="document" maxlength="11" />
                         <x-input-error for="document" />
                     </div>
                     <div class="lg:col-span-2">
@@ -23,19 +23,30 @@
                     </div>
                     <div class="">
                         <x-label value="FECHA ENTREGA SOLICITADA:" />
-                        <x-input class="block w-full" wire:model.defer="dateentrega" type="date" />
-                        <x-input-error for="dateentrega" />
+                        <x-input class="block w-full" wire:model.defer="fechaentrega" type="date" />
+                        <x-input-error for="fechaentrega" />
                     </div>
                 </div>
 
                 @if (count($itemservices) > 0)
                     <div class="w-full flex flex-col gap-1 mt-2">
                         @foreach ($itemservices as $key => $item)
-                            <div class="w-full rounded-xl p-3 text-xs shadow">
-                                {{ print_r($item) }}
+                            <div class="w-full rounded-xl p-2 text-xs shadow">
+                                <h1 class="w-full text-blue-700 text-sm">{{ $item['name'] }}</h1>
+                                <p class="text-xs text-neutral-500">{{ $item['detalle'] }}</p>
+                                <div class="w-full grid grid-cols-2 text-neutral-900">
+                                    <div>
+                                        <span class="font-semibold text-lg">{{ $item['cantidad'] }} UND</span>
+                                        <small class=""> \ P.UNIT. :{{ $item['price'] }}</small>
+                                    </div>
+                                    <small class="text-end">IMPORTE :
+                                        <span
+                                            class="text-end font-semibold text-xl">{{ number_format($item['importe'], 2, '.', ', ') }}</span>
+                                    </small>
+                                </div>
 
-                                <div class="w-full flex justify-end">
-                                    <x-button-delete wire:key="delservice_{{ $item->id }}"
+                                <div class="w-full flex justify-end pt-2">
+                                    <x-button-delete wire:key="delservice_{{ $item['service_id'] }}"
                                         wire:click="removeitem({{ $key }})" />
                                 </div>
                             </div>
@@ -45,10 +56,21 @@
                     <p class="text-red-600 font-semibold text-xs mt-2">No existen servicios agregados.</p>
                 @endif
 
-                <h1 class="text-xs font-semibold text-neutral-800 pt-8 pb-3">AGREGAR SERVCIOS AL PEDIDO</h1>
+                <div class="w-full text-neutral-900 mt-3">
+                    <p class="text-end text-xl font-semibold">
+                        <small class="text-xs font-normal">TOTAL : S/.</small>
+                        {{ number_format($amount, 2, '.', ', ') }}
+                    </p>
+                </div>
 
-                <div>
 
+                <hr class="mt-5 mb-3">
+                <label for="showformadd" class="cursor-pointer text-xs font-semibold text-neutral-800 pt-8 pb-3">
+                    <input class="cursor-pointer" type="checkbox" x-model="showformadd" id="showformadd">
+                    AGREGAR SERVCIOS AL PEDIDO
+                </label>
+
+                <div class="w-full block mt-3" x-show="showformadd" style="display: none" x-cloak x-transition>
                     <div class="flex w-full flex-col gap-1" x-on:keydown="handleKeydownOnOptions($event)"
                         x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false">
                         <x-label value="Seleccionar producto :" />
@@ -90,13 +112,15 @@
                                             <path
                                                 d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                                         </svg>
-                                        <x-input class="w-full block p-2 pl-11 pr-4" name="search" aria-label="Search"
-                                            @input="getFilteredOptions(search)" x-ref="search" x-model="search"
-                                            placeholder="Search" autocomplete="off" {{--  @input.debounce.300ms="fetchProducts" --}} />
+                                        <x-input class="w-full block p-2 pl-11 pr-4" name="search"
+                                            aria-label="Search" @input="getFilteredOptions(search)" x-ref="search"
+                                            x-model="search" placeholder="Search" autocomplete="off"
+                                            {{--  @input.debounce.300ms="fetchProducts" --}} />
                                     </div>
 
                                     <ul class="flex max-h-60 p-1 flex-col overflow-y-auto">
-                                        <li class="hidden px-4 py-2 text-sm text-neutral-900 " x-ref="noResultsMessage">
+                                        <li class="hidden px-4 py-2 text-sm text-neutral-900 "
+                                            x-ref="noResultsMessage">
                                             <span>No matches found</span>
                                         </li>
                                         <template x-for="(item, index) in filteredProducts"
@@ -151,34 +175,29 @@
                         <x-input-error for="producto_id" />
                     </div>
 
-
-
-
-
-
                     <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-2">
                         <div class="">
                             <x-label value="CANTIDAD" />
-                            <x-input class="block w-full" wire:model.defer="cantidad"
+                            <x-input class="block w-full" x-model="cantidad" wire:model.defer="cantidad"
                                 wire:keydown.enter.prevent="addservice" />
                             <x-input-error for="cantidad" />
                         </div>
                         <div class="">
                             <x-label value="PRECIO :" />
-                            <x-input class="block w-full" wire:model.defer="price"
+                            <x-input class="block w-full" x-model="price" wire:model.defer="price"
                                 wire:keydown.enter.prevent="addservice" />
                             <x-input-error for="price" />
                         </div>
                         <div class="sm:col-span-2 md:col-span-3">
                             <x-label value="ESPECIFICACIONES DEL PEDIDO :" />
-                            <x-input class="block w-full" wire:model.defer="detalle"
+                            <x-input class="block w-full" x-model="detalle" wire:model.defer="detalle"
                                 wire:keydown.enter.prevent="addservice" />
                             <x-input-error for="detalle" />
                         </div>
                     </div>
 
                     <div class="w-full mt-2 flex">
-                        <x-button type="button" wire:loading.attr="disabled">
+                        <x-button type="button" wire:loading.attr="disabled" wire:click="addservice">
                             {{ __('Add item') }}</x-button>
                     </div>
                 </div>
@@ -195,6 +214,7 @@
         document.addEventListener('alpine:init', () => {
             Alpine.data('data', () => ({
                 open: false,
+                showformadd: true,
                 search: '',
                 products: [],
                 filteredProducts: [],
@@ -205,14 +225,21 @@
                 price: @entangle('price').defer,
                 importe: 0,
                 amount: @entangle('amount').defer,
-
+                cantidad: @entangle('cantidad').defer,
+                detalle: @entangle('detalle').defer,
                 init() {
                     this.fetchProducts();
-                    // this.$watch("typedescuento", (value) => {
-                    //     console.log(value);
-                    // })
+                    this.$watch("cantidad", (value) => {
+                        if (value > 0) {
+                            this.importe = value * this.price;
+                        }
+                    })
 
-
+                    this.$watch("price", (value) => {
+                        if (value > 0) {
+                            this.importe = value * this.cantidad;
+                        }
+                    })
                 },
                 numeric() {
 
@@ -263,8 +290,11 @@
                         });
                 },
                 setSelectedOption(option) {
+                    // console.log(option);
                     this.producto_id = option.id
                     this.selectedOption = option
+                    this.price = option.price
+                    // this.cantidad = 1
                     this.isOpen = false
                     this.openedWithKeyboard = false
                     this.$refs.hiddenTextField.value = option.value
