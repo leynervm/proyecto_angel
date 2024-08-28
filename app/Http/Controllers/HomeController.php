@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Service;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -24,9 +25,22 @@ class HomeController extends Controller
         return view('about');
     }
 
-    public function cart()
+    public function tracking()
     {
-        return view('cart');
+        return view('tracking');
+    }
+
+    public function results(Request $request)
+    {
+        $search = $request->input('search');
+        $order = Order::with(['trackings' => function ($query) {
+            $query->orderBy('date', 'desc');
+        }])->where('id', $search)->get()->first();
+
+        if (!$order) {
+            return back()->with('message', 'No se encontraron resultados.');
+        }
+        return view('results', compact('order'));
     }
 
     public function contact()

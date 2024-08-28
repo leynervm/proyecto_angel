@@ -27,11 +27,11 @@
                         {{-- <p class="text-[10px] mt-2 text-gray-600 cursor-auto leading-3">
                             PRECIO REFERENCIAL</p> --}}
 
-                            <p class="text-lg font-semibold text-black cursor-auto mb-3 text-center leading-4">
-                                <small class="text-[9px] text-neutral-500 italic">PRECIO REGULAR</small>
-                                <br>
-                                S/. {{ $item->pricereferencial }}
-                            </p>
+                        <p class="text-lg font-semibold text-black cursor-auto mb-3 text-center leading-4">
+                            <small class="text-[9px] text-neutral-500 italic">PRECIO REGULAR</small>
+                            <br>
+                            S/. {{ $item->pricereferencial }}
+                        </p>
                         {{-- @click="addcart(`{{ route('cart.add') }}`, '{{ $item->id }}')" --}}
                         <button @click="addchat('{{ $item->name }}')"
                             class="w-full inline-flex items-center justify-center text-xs gap-2 bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition ease duration-150">
