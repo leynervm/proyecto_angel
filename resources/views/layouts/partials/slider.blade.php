@@ -2,7 +2,7 @@
     slides: [{
             imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-1.webp',
             imgAlt: 'Vibrant abstract painting with swirling blue and light pink hues on a canvas.',
-            title: 'Front end developers',
+            title: `<h1 class='text-neutral-600'>En <b class='text-primary italic'>PubliCalin</b> estamos comprometidos contigo, ofreciéndote <b class='text-secondary'>soluciones que van mas allá de tus expectativas</b>, poniendo a tu disposición equipo de vanguardia tecnológica y personal altamente calificado.</h1>`,
             description: 'The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.',
         },
         {
@@ -59,18 +59,18 @@
 
     <!-- slides -->
     <!-- Change min-h-[50svh] to your preferred height size -->
-    <div class="relative min-h-[50svh] w-full">
+    <div class="relative min-h-[60svh] w-full">
         <template x-for="(slide, index) in slides">
             <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0"
                 x-transition.opacity.duration.1000ms>
 
                 <!-- Title and description -->
                 <div
-                    class="lg:px-32 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 bg-gradient-to-t from-slate-900/85 to-transparent px-16 py-12 text-center">
+                    class="lg:px-32 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 {{-- bg-gradient-to-t from-slate-900/85 to-transparent --}} px-16 py-12 text-center">
                     <h3 class="w-full lg:w-[80%] text-balance text-2xl lg:text-3xl font-bold text-white"
-                        x-text="slide.title" x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"></h3>
-                    <p class="lg:w-1/2 w-full text-pretty text-sm text-slate-300" x-text="slide.description"
-                        x-bind:id="'slide' + (index + 1) + 'Description'"></p>
+                        x-html="slide.title" x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"></h3>
+                    {{-- <p class="lg:w-1/2 w-full text-pretty text-sm text-slate-300" x-text="slide.description"
+                        x-bind:id="'slide' + (index + 1) + 'Description'"></p> --}}
                 </div>
 
                 <img class="absolute w-full h-full inset-0 object-cover text-slate-700 dark:text-slate-300"

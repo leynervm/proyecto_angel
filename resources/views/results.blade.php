@@ -41,22 +41,22 @@
                     <div class="space-y-4 p-3">
                         <dl class="flex items-center justify-between gap-4 pt-2 ">
                             <dt class="text-lg font-bold text-gray-900 ">Total</dt>
-                            <dd class="text-lg font-bold text-gray-900 ">
-                                {{ number_format($order->amount, 2, '.', ', ') }}</dd>
+                            <dd class="text-2xl font-bold text-gray-900 ">
+                                S/. {{ number_format($order->amount, 2, '.', ', ') }}</dd>
                         </dl>
                     </div>
                 </div>
 
                 <div class="mt-6 grow sm:mt-8 lg:mt-0">
-                    <div class="space-y-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm ">
-                        <h3 class="text-xl font-semibold text-orange-500 ">
+                    <div class="space-y-6 rounded-lg border border-gray-200 p-3 shadow-sm ">
+                        <h3 class="text-xl font-semibold text-neutral-700 ">
                             Historial Orden</h3>
 
-                        <ol class="relative ms-3 border-s border-blue-300 ">
+                        <ol class="relative ms-3 border-s border-neutral-300 ">
                             @foreach ($order->trackings as $item)
                                 <li class="mb-10 ms-6">
                                     <span
-                                        class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full ring-8 {{ $item->estado->isFinish() ? 'ring-green-500 text-green-500' : 'ring-blue-500 text-blue-500' }}">
+                                        class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full ring-8 {{ $item->estado->isFinish() ? 'ring-blue-500 text-blue-500' : 'ring-neutral-500 text-neutral-500' }}">
                                         <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                             stroke-linecap="round" stroke-linejoin="round">
@@ -64,10 +64,10 @@
                                         </svg>
                                     </span>
                                     <h4
-                                        class="mb-0.5 font-semibold {{ $item->estado->isFinish() ? 'text-green-500' : 'text-blue-700' }} uppercase">
+                                        class="mb-0.5 font-semibold {{ $item->estado->isFinish() ? 'text-blue-500' : 'text-neutral-700' }} uppercase">
                                         {{ \Carbon\Carbon::parse($item->date)->translatedFormat('l, d \d\e F \d\e Y h:i A') }}
                                     </h4>
-                                    <p class="text-sm text-neutral-500">{{ $item->estado->name }}</p>
+                                    <p class="text-sm {{ $item->estado->isFinish() ? 'text-blue-500' : 'text-neutral-500' }}">{{ $item->estado->name }}</p>
                                 </li>
                             @endforeach
                         </ol>

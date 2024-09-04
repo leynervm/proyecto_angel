@@ -1,24 +1,22 @@
 <x-app-layout>
-    <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
-        <div class="mt-4" data-aos="zoom-in">
-            <h2 class="font-semibold text-blue-700 lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9">
-                Frequently Asked Questions</h2>
-            <p class="font-normal text-base leading-6 text-gray-600 lg:w-8/12 md:w-9/12">
-                Here are
-                few of the most frequently asked questions by our valueable customers</p>
-        </div>
+    <div class="w-full max-w-6xl px-6 mx-auto">
+        <section class="block my-20" data-aos="zoom-in">
+            <div class="w-full flex flex-col justify-center items-center">
+                <h2 class="text-5xl text-center font-semibold text-blue-700">
+                    {{ __('Nosotros') }}</h2>
+            </div>
+        </section>
+
         <div class="flex md:flex-row flex-col md:space-x-8 md:mt-16 mt-8">
-            <div class="md:w-5/12 lg:w-4/12 w-full">
-                <img src="https://i.ibb.co/8bCs73h/pexels-ron-lach-8128069-1.png" alt="Image of Glass bottle"
-                    class="w-full md:block hidden" />
-                <img src="https://i.ibb.co/gZMfQJq/pexels-ron-lach-8128069-1-1.png" alt="Image of Glass bottle"
-                    class="w-full md:hidden block" />
+            <div class="md:w-5/12 lg:w-4/12 w-full rounded-xl overflow-hidden">
+                <img src="{{ asset('assets\images\publicidad.jpg') }}" alt="Image of Glass bottle" class="w-full block" />
+
             </div>
             <div class="md:w-7/12 lg:w-8/12 w-full md:mt-0 sm:mt-14 mt-10">
                 <!-- Shipping Section -->
                 <div>
                     <div data-aos="fade-right" class="flex justify-between items-center cursor-pointer">
-                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">Shipping</h3>
+                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">MISIÓN</h3>
                         <button aria-label="too"
                             class="text-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
                             onclick="openAnsSection(1)">
@@ -43,7 +41,7 @@
 
                 <div>
                     <div data-aos="fade-right" class="flex justify-between items-center cursor-pointer">
-                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">Returns</h3>
+                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">VISIÓN</h3>
                         <button aria-label="too"
                             class="text-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
                             onclick="openAnsSection(2)">
@@ -67,7 +65,7 @@
 
                 <div>
                     <div data-aos="fade-right" class="flex justify-between items-center cursor-pointer">
-                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">Exchange</h3>
+                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">VALORES</h3>
                         <button aria-label="too"
                             class="text-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
                             onclick="openAnsSection(3)">
@@ -91,7 +89,7 @@
 
                 <div>
                     <div data-aos="fade-right" class="flex justify-between items-center cursor-pointer">
-                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">Tracking</h3>
+                        <h3 class="font-semibold text-xl  leading-5 text-gray-800">FORTALEZAS</h3>
                         <button aria-label="too"
                             class="text-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
                             onclick="openAnsSection(4)">

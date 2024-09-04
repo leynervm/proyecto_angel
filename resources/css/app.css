@@ -113,3 +113,25 @@
     bottom: 0px !important;
     right: 0 !important;
 }
+
+
+
+.text-primary {
+    @apply text-[#1945A0];
+}
+
+.bg-primary {
+    @apply bg-[#1945A0];
+}
+
+.text-secondary {
+    @apply text-[#FA5F12];
+}
+
+.bg-secondary {
+    @apply bg-[#FA5F12];
+}
+
+.card-welcome {
+    box-shadow: 10px 5px 0 0px #CCC;
+}
