@@ -66,116 +66,17 @@
                 </div>
             </div>
 
-            <div class="w-full lg:flex-1 p-3 rounded-xl shadow border">
-                <div id="map" class="map" style="width: 100%; height: 350px;"></div>
-                MOSTRAR MAPA
+            <div class="w-full lg:flex-1">
+                <div class="w-full h-60">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1669.1767258050033!2d-78.80526117891175!3d-5.714046262896273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b4fb26828bcb79%3A0xbc002ec1320374c0!2sPublicalin!5e0!3m2!1ses-419!2spe!4v1725856578462!5m2!1ses-419!2spe"
+                        class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
         {{-- Copyright © <span id="get-current-year">2024</span>
             <span class="text-gray-500 hover:text-gray-800" target="_blank">
                 Angel </span> --}}
     </div>
-
-
-
-
-    <script>
-        (g => {
-            var h, a, k, p = "The Google Maps JavaScript API",
-                c = "google",
-                l = "importLibrary",
-                q = "__ib__",
-                m = document,
-                b = window;
-            b = b[c] || (b[c] = {});
-            var d = b.maps || (b.maps = {}),
-                r = new Set,
-                e = new URLSearchParams,
-                u = () => h || (h = new Promise(async (f, n) => {
-                    await (a = m.createElement("script"));
-                    e.set("libraries", [...r] + "");
-                    for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
-                    e.set("callback", c + ".maps." + q);
-                    a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-                    d[q] = f;
-                    a.onerror = () => h = n(Error(p + " could not load."));
-                    a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-                    m.head.append(a)
-                }));
-            d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() =>
-                d[l](f, ...n))
-        })
-        ({
-            key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg",
-            v: "weekly"
-        });
-    </script>
-
-    <script>
-        async function initMap() {
-            // Request needed libraries.
-            const {
-                Map
-            } = await google.maps.importLibrary("maps");
-            const {
-                AdvancedMarkerElement
-            } = await google.maps.importLibrary("marker");
-
-            const map = new Map(document.getElementById("map"), {
-                center: {
-                    lat: -5.713773757079347,
-                    lng: -78.80426541280418
-                },
-                zoom: 18,
-                mapId: "4504f8b37365c3d0",
-            });
-
-            const marker = new AdvancedMarkerElement({
-                map,
-                position: {
-                    lat: -5.713773757079347,
-                    lng: -78.80426541280418
-                },
-            });
-        }
-        initMap();
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // var map = new ol.Map({
-            //     target: 'map',
-            //     layers: [
-            //         new ol.layer.Tile({
-            //             source: new ol.source.OSM()
-            //         })
-            //     ],
-            //     view: new ol.View({
-            //         center: ol.proj.fromLonLat(['-5.713773757079347', '-78.80426541280418']),
-            //         zoom: 10
-            //     })
-            // });
-            // showGoogleMaps();
-        })
-
-        // function showGoogleMaps() {
-        // //Creamos el punto a partir de la latitud y longitud de una dirección:
-        // var point = new google.maps.LatLng('-5.713773757079347,', '-78.80426541280418');
-
-        // //Configuramos las opciones indicando zoom, punto y tipo de mapa
-        // var myOptions = {
-        // zoom: 15,
-        // center: point,
-        // mapTypeId: google.maps.MapTypeId.ROADMAP
-        // };
-
-        // //Creamos el mapa y lo asociamos a nuestro contenedor
-        // var map = new google.maps.Map(document.getElementById("showMap"), myOptions);
-
-        // //Mostramos el marcador en el punto que hemos creado
-        // var marker = new google.maps.Marker({
-        // position: point,
-        // map: map,
-        // title: "Publicalin - Parque Alfonso Arana Vidal, Jaén"
-        // });
-        // }
-    </script>
 </footer>
