@@ -1,18 +1,18 @@
 <div x-data="{
     slides: [{
-            imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-1.webp',
+            imgSrc: '{{ asset('assets/images/PORTADA1.jpg') }}',
             imgAlt: 'Vibrant abstract painting with swirling blue and light pink hues on a canvas.',
             title: `<h1 class='text-neutral-600'>En <b class='text-primary italic'>PubliCalin</b> estamos comprometidos contigo, ofreciéndote <b class='text-secondary'>soluciones que van mas allá de tus expectativas</b>, poniendo a tu disposición equipo de vanguardia tecnológica y personal altamente calificado.</h1>`,
             description: 'The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.',
         },
         {
-            imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-2.webp',
+            imgSrc: '{{ asset('assets/images/PORTADA2.jpg') }}',
             imgAlt: 'Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.',
             title: 'Back end developers',
             description: 'Because not all superheroes wear capes, some wear headphones and stare at terminal screens',
         },
         {
-            imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-3.webp',
+            imgSrc: '{{ asset('assets/images/PORTADA1.jpg') }}',
             imgAlt: 'Vibrant abstract painting with swirling blue and purple hues on a canvas.',
             title: 'Full stack developers',
             description: 'Where &quot;burnout&quot; is just a fancy term for &quot;Tuesday&quot;.'

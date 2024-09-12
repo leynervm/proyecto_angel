@@ -276,7 +276,7 @@
                             <div class="relative w-full h-32">
                                 <div
                                     class="w-full overflow-hidden h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
-                                    <img src="{{ asset('assets/images/image.jpeg') }}" alt="Product"
+                                    <img src="{{ asset('assets/images/cliente_logo.jpg') }}" alt="Product"
                                         class="h-full w-full block object-cover overflow-hidden" />
                                 </div>
                                 <div
