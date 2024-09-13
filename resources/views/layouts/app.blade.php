@@ -25,7 +25,7 @@
 
     <div class="min-h-screen bg-gray-100">
         <nav class="p-2 bg-white text-gray-200">
-            <div class="w-full contenedor flex flex-col md:flex-row justify-between items-center">
+            <div class="w-full px-3 flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center">
                     <a href="/" class="flex-1 items-center justify-center block h-full">
                         <img src="{{ asset('assets/images/LOGOCALIN.svg') }}" alt="" class="h-16 w-auto block">
@@ -36,29 +36,38 @@
                     <ul class="flex flex-wrap gap-3">
                         <li class="text-sm p-2">
                             <a href="{{ route('home') }}"
-                                class="link-nav {{ request()->routeIs('home') ? 'link-active' : '' }}"
-                                style="text-underline-offset: 8px;">{{ __('Home') }}</a>
+                                class="link-nav group {{ request()->routeIs('home') ? 'link-active' : '' }}"
+                                style="text-underline-offset: 8px;">
+                                <img src="{{ asset('assets/images/ICONOINICIO.svg') }}" alt=""
+                                    class="w-6 h-6 block object-scale-down {{ request()->routeIs('home') ? 'hidden' : '' }}">
+                                {{ __('Home') }}
+                            </a>
                         </li>
                         <li class="text-sm p-2">
                             <a href="{{ route('services') }}"
                                 class="link-nav {{ request()->routeIs('services') ? 'link-active' : '' }}"
-                                style="text-underline-offset: 8px;">Servicios Populares</a>
+                                style="text-underline-offset: 8px;">
+                                <img src="{{ asset('assets/images/ICONOSERVICIOS.svg') }}" alt=""
+                                    class="w-6 h-6 block object-scale-down {{ request()->routeIs('services') ? 'hidden' : '' }}">
+                                Servicios
+                            </a>
                         </li>
                         <li class="text-sm p-2">
-                            <a href="{{ route('about') }}"
-                                class="link-nav {{ request()->routeIs('about') ? 'link-active' : '' }}"
-                                style="text-underline-offset: 8px;">{{ __('About') }}</a>
+                            <a href="{{ route('nosotros') }}"
+                                class="link-nav {{ request()->routeIs('nosotros') ? 'link-active' : '' }}"
+                                style="text-underline-offset: 8px;">
+                                <img src="{{ asset('assets/images/ICONONOSOTROS.svg') }}" alt=""
+                                    class="w-6 h-6 block object-scale-down {{ request()->routeIs('nosotros') ? 'hidden' : '' }}">
+                                {{ __('nosotros') }}</a>
                         </li>
                         <li class="text-sm p-2">
                             <a href="{{ route('tracking') }}"
                                 class="link-nav {{ request()->routeIs('tracking') ? 'link-active' : '' }}"
-                                style="text-underline-offset: 8px;">{{ __('Rastrear pedido') }}</a>
+                                style="text-underline-offset: 8px;">
+                                <img src="{{ asset('assets/images/search.svg') }}" alt=""
+                                    class="w-6 h-6 block object-scale-down {{ request()->routeIs('tracking') ? 'hidden' : '' }}">
+                                {{ __('Tracking') }}</a>
                         </li>
-                        {{-- <li class="text-sm p-2">
-                            <a href=""
-                                class="link-nav"
-                                style="text-underline-offset: 8px;">{{ __('Contact') }}</a>
-                        </li> --}}
 
                         <li class="text-sm p-2">
                             @auth
@@ -69,18 +78,16 @@
 
                         <li class="text-sm p-2">
                             @auth
-                                <form method="POST" action="{{ route('logout') }}" x-data>
+                                {{-- <form method="POST" action="{{ route('logout') }}" x-data>
                                     @csrf
-
                                     <a href="{{ route('logout') }}" class="link-nav" style="text-underline-offset: 8px;"
                                         @click.prevent="$root.submit();">{{ __('Log Out') }}</a>
-                                </form>
+                                </form> --}}
                             @else
                                 <a href="{{ route('login') }}" class="link-nav"
                                     style="text-underline-offset: 8px;">{{ __('Log In') }}</a>
                             @endauth
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -115,7 +122,7 @@
 
 
     <!-- Código de instalación Cliengo para services.test -->
-    {{-- <script type="text/javascript">
+    <script type="text/javascript">
         (function() {
             var ldk = document.createElement('script');
             ldk.type = 'text/javascript';
@@ -125,13 +132,9 @@
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ldk, s);
         })();
-    </script> --}}
+    </script>
 
     <script>
-        AOS.init();
-
-        // You can also pass an optional settings object
-        // below listed default settings
         AOS.init({
             // Global settings:
             disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function

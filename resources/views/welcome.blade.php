@@ -3,23 +3,20 @@
 
 
 
-    {{-- <section class="w-full block">
-        <div class="flex gap-16 items-center justify-between py-8 px-4 mx-auto max-w-screen-xl">
-            <div class="flex-1 font-light text-gray-500 sm:text-lg max-w-lg">
-                <h2 class="mb-4 text-5xl leading-10 font-semibold text-blue-700" data-aos="zoom-in">
-                    We didn't reinvent the wheel</h2>
-                <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small
-                    enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.
-                    Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you
-                    need.</p>
-
-            </div>
-            <div class="w-72 mt-8">
-                <img class="mt-4 w-full rounded-lg h-72" src="{{ asset('assets/images/image.jpeg') }}"
-                    alt="office content 2">
+    <div class="relative min-h-[60svh] w-full">
+        <div
+            class="absolute w-full h-full flex flex-col lg:flex-row inset-0 z-10 p-8 text-center self-center gap-3 bg-gradient-to-t from-slate-200/85 to-transparent">
+            <h3 class="w-full flex-1 self-center text-justify text-balance text-2xl lg:text-3xl font-bold text-neutral-600 px-8">
+                En <b class="text-primary italic">PubliCalin</b> estamos comprometidos contigo, ofreciéndote
+                <b class="text-secondary">soluciones que van mas allá de tus expectativas</b>,
+                poniendo a tu disposición equipo de vanguardia tecnológica y personal altamente calificado.
+            </h3>
+            <div class="w-full max-w-xl flex-shrink-0 self-center">
+                <img src="{{ asset('assets/images/PLOTER.png') }}" alt="" class="w-full h-64 object-scale-down">
             </div>
         </div>
-    </section> --}}
+    </div>
+
 
     <section class="w-full block my-20">
         <div class="max-w-6xl px-6 mx-auto">
@@ -174,8 +171,8 @@
 
                 <button id="leftsugerencias"
                     class="absolute text-colorsubtitleform top-1/2 left-0 -translate-y-1/2 h-16 w-8 flex items-center justify-center disabled:opacity-25">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" fill="currentColor"
-                        class="w-8 h-8 block text-blue-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        fill="currentColor" class="w-8 h-8 block text-blue-700">
                         <path
                             d="M15.8051 5.40705C15.4776 4.96235 14.8516 4.86736 14.4069 5.19488C14.0615 5.44927 13.7332 5.70372 13.4472 5.92689C12.8764 6.3724 12.1118 6.98572 11.3444 7.65208C10.5819 8.31412 9.79361 9.04815 9.18811 9.73344C8.88637 10.0749 8.60888 10.4279 8.4014 10.7721C8.21046 11.0888 8 11.524 8 12.0001C8 12.4762 8.21046 12.9115 8.4014 13.2282C8.60888 13.5724 8.88637 13.9253 9.18811 14.2668C9.79361 14.9521 10.5819 15.6861 11.3444 16.3482C12.1118 17.0145 12.8764 17.6278 13.4472 18.0734C13.7332 18.2965 14.0615 18.551 14.4069 18.8054C14.8516 19.1329 15.4776 19.0379 15.8051 18.5932C15.9368 18.4144 16.0002 18.2064 16 18.0002V12.0001V6.00007C16.0002 5.79387 15.9368 5.58581 15.8051 5.40705Z" />
                     </svg>

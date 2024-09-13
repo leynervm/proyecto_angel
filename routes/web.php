@@ -42,10 +42,10 @@ Route::post('/cart/add', [HomeController::class, 'addcart'])->name('cart.add');
 
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
 Route::get('/tracking', [HomeController::class, 'tracking'])->name('tracking');
 Route::get('/tracking/search/results', [HomeController::class, 'results'])->name('tracking.results');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+// Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/orders', [HomeController::class, 'orders'])->name('orders');
 Route::get('/popular-services', [HomeController::class, 'services'])->name('services');

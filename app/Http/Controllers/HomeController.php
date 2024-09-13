@@ -20,9 +20,9 @@ class HomeController extends Controller
         return view('services', compact('services'));
     }
 
-    public function about()
+    public function nosotros()
     {
-        return view('about');
+        return view('nosotros');
     }
 
     public function tracking()

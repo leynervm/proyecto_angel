@@ -1,5 +1,5 @@
 <footer class="w-full relative bg-blue-800 pt-8 pb-6">
-    <div class="max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 mx-auto">
+    <div class="max-w-6xl grid grid-cols-1 md:grid-cols-2 mx-auto">
         <div class="">
             <div class="w-full h-24">
                 <img class="h-full w-auto max-w-xs object-scale-down block mx-auto text-center"
