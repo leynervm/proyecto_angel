@@ -6,7 +6,8 @@
     <div class="relative min-h-[60svh] w-full">
         <div
             class="absolute w-full h-full flex flex-col lg:flex-row inset-0 z-10 p-8 text-center self-center gap-3 bg-gradient-to-t from-slate-200/85 to-transparent">
-            <h3 class="w-full flex-1 self-center text-justify text-balance text-2xl lg:text-3xl font-bold text-neutral-600 px-8">
+            <h3
+                class="w-full flex-1 self-center text-justify text-balance text-2xl lg:text-3xl font-bold text-neutral-600 px-8">
                 En <b class="text-primary italic">PubliCalin</b> estamos comprometidos contigo, ofreciéndote
                 <b class="text-secondary">soluciones que van mas allá de tus expectativas</b>,
                 poniendo a tu disposición equipo de vanguardia tecnológica y personal altamente calificado.
@@ -209,6 +210,22 @@
                 @endfor
             </div> --}}
     </section>
+
+    <!-- Código de instalación Cliengo para services.test -->
+    <!-- Código de instalación Cliengo para gerix.org -->
+    <!-- Código de instalación Cliengo para services.test -->
+    <script type="text/javascript">
+        (function() {
+            var ldk = document.createElement('script');
+            ldk.type = 'text/javascript';
+            ldk.async = true;
+            ldk.src =
+                'https://s.cliengo.com/weboptimizer/66e8fda4f6096a1d5284fa29/66e8ff7241a52a7a004edd79.js?platform=onboarding_modular';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ldk, s);
+        })();
+    </script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

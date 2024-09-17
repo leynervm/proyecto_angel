@@ -118,22 +118,6 @@
     <script src="{{ asset('assets/aos/aos.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/jquery-3.4.1.min.js') }}"></script>
 
-
-
-
-    <!-- Código de instalación Cliengo para services.test -->
-    <script type="text/javascript">
-        (function() {
-            var ldk = document.createElement('script');
-            ldk.type = 'text/javascript';
-            ldk.async = true;
-            ldk.src =
-                'https://s.cliengo.com/weboptimizer/66c382e50d294f41222c2630/66c796954cfa490f088c22e6.js?platform=onboarding_modular';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ldk, s);
-        })();
-    </script>
-
     <script>
         AOS.init({
             // Global settings:
