@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="flex">
-                    <ul class="flex flex-wrap gap-3">
+                    <ul class="flex flex-wrap gap-5 items-center">
                         <li class="text-sm p-2">
                             <a href="{{ route('home') }}"
                                 class="link-nav group {{ request()->routeIs('home') ? 'link-active' : '' }}"

@@ -69,7 +69,7 @@
                     data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/ATENCIONPERSONALIZADA.svg') }}" alt=""
                         class="w-auto h-32 sm:h-40 block">
-                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Venta de insumos</h1>
+                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Atención personalizada</h1>
                 </div>
             </div>
         </div>
