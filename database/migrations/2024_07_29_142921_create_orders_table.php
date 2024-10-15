@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('purchase', 12);
+            $table->string('purchase', 5);
             $table->dateTime('date');
             $table->unsignedDecimal('amount', 12, 2);
             $table->dateTime('fechaentrega');
