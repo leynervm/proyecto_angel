@@ -22,7 +22,7 @@
 
 
                 <div class="flex gap-1 relative">
-                    <input type="text" id="search" name="search" placeholder="001" required
+                    <input type="text" id="search" name="search" placeholder="XXXXXXXXXXX" required
                         class="w-full pl-10 block flex-1 p-2.5 text-blue-700 border-blue-500 rounded-lg italic focus:outline-0 focus:border-blue-500 focus:outline-none">
                     <button type="submit"
                         class="block flex-shrink-0 p-3 bg-blue-700 rounded-full text-white cursor-pointer focus:ring-2 focus:ring-blue-300">

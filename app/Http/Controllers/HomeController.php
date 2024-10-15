@@ -35,7 +35,7 @@ class HomeController extends Controller
         $search = $request->input('search');
         $order = Order::with(['trackings' => function ($query) {
             $query->orderBy('date', 'desc');
-        }])->where('id', $search)->get()->first();
+        }])->where('purchase', $search)->get()->first();
 
         if (!$order) {
             return back()->with('message', 'No se encontraron resultados.');

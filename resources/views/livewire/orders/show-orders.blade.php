@@ -18,7 +18,7 @@
         @foreach ($orders as $item)
             <tr>
                 <td class="p-2 uppercase">
-                    N°-{{ $item->id }}
+                    N°-{{ $item->purchase }}
                     <br>
                     {{ \Carbon\Carbon::parse($item->date)->translatedFormat('l, d \d\e F \d\e Y') }} <br>
                     {{ \Carbon\Carbon::parse($item->date)->translatedFormat('h:i A') }}

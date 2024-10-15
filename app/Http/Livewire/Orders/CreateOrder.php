@@ -95,13 +95,14 @@ class CreateOrder extends Component
     public function save()
     {
 
+        $purchase = $this->generateUniqueNumber();
         $this->document = trim($this->document);
         $validateData = $this->validate();
         DB::beginTransaction();
 
         try {
             $order = Order::create([
-                'purchase' => Str::random(12),
+                'purchase' => $purchase,
                 'date' => now('America/Lima'),
                 'document' => $this->document,
                 'name' => trim($this->name),
@@ -130,5 +131,15 @@ class CreateOrder extends Component
             DB::rollBack();
             throw $e;
         }
+    }
+
+    public function generateUniqueNumber()
+    {
+        do {
+            $number = mt_rand(100000000000, 999999999999);
+            $exists = DB::table('orders')->where('purchase', $number)->exists();
+        } while ($exists);
+
+        return $number;
     }
 }
