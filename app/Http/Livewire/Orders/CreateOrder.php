@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Orders;
 
 use App\Models\Order;
 use App\Models\Service;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
@@ -100,6 +101,7 @@ class CreateOrder extends Component
 
         try {
             $order = Order::create([
+                'purchase' => Str::random(12),
                 'date' => now('America/Lima'),
                 'document' => $this->document,
                 'name' => trim($this->name),

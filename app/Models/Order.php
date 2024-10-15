@@ -12,6 +12,7 @@ class Order extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'purchase',
         'date',
         'amount',
         'fechaentrega',

@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
     ->prefix('dashboard')->group(function () {
-        Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+        // Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
 
         Route::get('/orders', [OrderController::class, 'index'])->name('dashboard.orders');
         Route::get('/orders/{order}/show', [OrderController::class, 'show'])->name('dashboard.orders.show');
@@ -50,7 +50,6 @@ Route::get('/tracking/search/results', [HomeController::class, 'results'])->name
 Route::get('/orders', [HomeController::class, 'orders'])->name('orders');
 Route::get('/popular-services', [HomeController::class, 'services'])->name('services');
 Route::get('/estados', [HomeController::class, 'estados'])->name('estados');
-
 
 
 // Route::get('/prueba', function () {

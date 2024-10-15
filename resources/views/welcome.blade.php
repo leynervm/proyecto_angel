@@ -212,22 +212,17 @@
     </section>
 
     <!-- Código de instalación Cliengo para services.test -->
-    <!-- Código de instalación Cliengo para gerix.org -->
-    <!-- Código de instalación Cliengo para services.test -->
     <script type="text/javascript">
         (function() {
             var ldk = document.createElement('script');
             ldk.type = 'text/javascript';
             ldk.async = true;
             ldk.src =
-                'https://s.cliengo.com/weboptimizer/66e8fda4f6096a1d5284fa29/66e8ff7241a52a7a004edd79.js?platform=onboarding_modular';
+                'https://s.cliengo.com/weboptimizer/670dc89214ff823a088b82a4/670dc89214ff823a088b82a7.js?platform=dashboard';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ldk, s);
         })();
-    </script>
 
-
-    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // $("#leftrecents, #leftsugerencias, #leftsimilares").prop('disabled', true);
 

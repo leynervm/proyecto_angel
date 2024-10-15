@@ -1,12 +1,10 @@
 <x-admin-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto p-1 sm:p-0 flex flex-col gap-5">
-            <div>
-                <livewire:estados.create-estado />
-            </div>
-            <div>
-                <livewire:estados.show-estados />
-            </div>
+    <div class="w-full max-w-[1280px] mx-auto p-1 flex flex-col gap-5">
+        <div>
+            <livewire:estados.create-estado />
+        </div>
+        <div>
+            <livewire:estados.show-estados />
         </div>
     </div>
 </x-admin-layout>
