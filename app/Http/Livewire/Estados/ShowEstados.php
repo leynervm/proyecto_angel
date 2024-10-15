@@ -21,10 +21,13 @@ class ShowEstados extends Component
     {
         return [
             'estado.name' => [
-                'required', 'string', 'unique:estados,name,' . $this->estado->id
+                'required',
+                'string',
+                'unique:estados,name,' . $this->estado->id
             ],
             'estado.finish' => [
-                'required', 'boolean',
+                'required',
+                'boolean',
                 Rule::unique('estados', 'finish')
                     ->where('finish', Estado::FINISH)
                     ->ignore($this->estado->id)
@@ -63,6 +66,15 @@ class ShowEstados extends Component
 
     public function delete(Estado $estado)
     {
+        if ($estado->trackings()->exists()) {
+            $this->dispatchBrowserEvent('alert', [
+                'title' => 'NO SE PUEDE ELIMINAR ESTADO, YA QUE SE ENCUENTRA VINCULADO A LAS ORDENES',
+                'text' => null,
+                'icon' => 'info'
+            ]);
+            return false;
+        }
+
         $estado->delete();
         $this->dispatchBrowserEvent('toast', ['title' => 'ELIMINADO CORRECTAMENTE', 'icon' => 'success']);
     }

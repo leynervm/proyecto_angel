@@ -22,13 +22,21 @@ class ShowServices extends Component
     {
         return [
             'service.name' => [
-                'required', 'string', 'unique:services,name,' . $this->service->id
+                'required',
+                'string',
+                'unique:services,name,' . $this->service->id
             ],
             'service.pricereferencial' => [
-                'required', 'numeric', 'gt:0', 'decimal:0,2'
+                'required',
+                'numeric',
+                'gt:0',
+                'decimal:0,2'
             ],
             'image' => [
-                'nullable', 'file', 'mimes:jpeg,png,gif', 'max:5120'
+                'nullable',
+                'file',
+                'mimes:jpeg,png,gif',
+                'max:5120'
             ],
         ];
     }
@@ -88,6 +96,14 @@ class ShowServices extends Component
 
     public function delete(Service $service)
     {
+        if ($service->items()->exists()) {
+            $this->dispatchBrowserEvent('alert', [
+                'title' => 'NO SE PUEDE ELIMINAR SERVICIO, YA QUE SE ENCUENTRA VINCULADO A LAS ORDENES',
+                'text' => null,
+                'icon' => 'info'
+            ]);
+            return false;
+        }
         $service->delete();
         $this->dispatchBrowserEvent('toast', ['title' => 'ELIMINADO CORRECTAMENTE', 'icon' => 'success']);
     }
