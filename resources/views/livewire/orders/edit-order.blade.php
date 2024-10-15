@@ -3,8 +3,8 @@
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
             <div class="">
                 <x-label value="ORDEN :" />
-                <p class="block w-full p-2.5 text-xs border rounded-lg shadow-sm border-gray-300">N°-{{ $order->id }}
-                </p>
+                <p class="block w-full p-2.5 text-xs border rounded-lg shadow-sm border-gray-300">
+                    N°-{{ $order->purchase }}</p>
             </div>
             <div class="">
                 <x-label value="REGISTRADO :" />
@@ -57,8 +57,8 @@
                 </div>
 
                 <div class="w-full flex gap-2 justify-end pt-2">
-                    <x-button-edit wire:key="editservice_{{ $item->id }}"
-                        wire:click="deleteservice({{ $item->id }})" />
+                    {{-- <x-button-edit wire:key="editservice_{{ $item->id }}"
+                        wire:click="deleteservice({{ $item->id }})" /> --}}
                     <x-button-delete wire:key="delservice_{{ $item->id }}"
                         wire:click="deleteservice({{ $item->id }})" />
                 </div>

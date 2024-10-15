@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Orders;
 
 use App\Models\Estado;
+use App\Models\Item;
 use App\Models\Order;
 use App\Models\Tracking;
 use Carbon\Carbon;
@@ -70,6 +71,7 @@ class EditOrder extends Component
             'estado_id' => $this->estado_id,
         ]);
         $this->order->refresh();
+        $this->order->fechaentrega = Carbon::parse($this->order->fechaentrega)->format('Y-m-d');
         $this->dispatchBrowserEvent('created');
         $this->reset(['estado_id']);
         $this->resetValidation();
@@ -79,6 +81,17 @@ class EditOrder extends Component
     {
         $tracking->delete();
         $this->order->refresh();
+        $this->order->fechaentrega = Carbon::parse($this->order->fechaentrega)->format('Y-m-d');
+        $this->dispatchBrowserEvent('deleted');
+    }
+
+    public function deleteservice(Item $item)
+    {
+        $item->delete();
+        $this->order->amount = $this->order->items()->sum('amount') ?? 0;
+        $this->order->save();
+        $this->order->refresh();
+        $this->order->fechaentrega = Carbon::parse($this->order->fechaentrega)->format('Y-m-d');
         $this->dispatchBrowserEvent('deleted');
     }
 }
