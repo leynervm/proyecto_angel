@@ -16,23 +16,41 @@
         },
     ],
     currentSlideIndex: 1,
+    interval: null,
+    startAutoSlide() {
+        this.interval = setInterval(() => {
+            this.next();
+        }, 3000);
+    },
+    stopAutoSlide() {
+        console.log('ENter');
+        clearInterval(this.interval);
+    },
+    resetAutoSlide() {
+        this.stopAutoSlide();
+        this.startAutoSlide();
+    },
     previous() {
         if (this.currentSlideIndex > 1) {
             this.currentSlideIndex = this.currentSlideIndex - 1
         } else {
-            // If it's the first slide, go to the last slide           
             this.currentSlideIndex = this.slides.length
         }
+        //this.resetAutoSlide();
     },
     next() {
         if (this.currentSlideIndex < this.slides.length) {
             this.currentSlideIndex = this.currentSlideIndex + 1
         } else {
-            // If it's the last slide, go to the first slide    
             this.currentSlideIndex = 1
         }
+        //this.resetAutoSlide();
     },
-}" class="relative w-full overflow-hidden">
+    init() {
+        this.startAutoSlide();
+    }
+}" class="relative w-full overflow-hidden" x-init="init()"
+    x-on:mouseenter="stopAutoSlide()" x-on:mouseleave="startAutoSlide()">
 
     <!-- previous button -->
     <button type="button"
@@ -55,7 +73,6 @@
     </button>
 
     <!-- slides -->
-    <!-- Change min-h-[50svh] to your preferred height size -->
     <div class="relative min-h-[75svh] w-full">
         <template x-for="(slide, index) in slides">
             <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0"
