@@ -7,69 +7,73 @@
         <div
             class="absolute w-full h-full flex flex-col lg:flex-row inset-0 z-10 p-8 text-center self-center gap-3 bg-gradient-to-t from-slate-200/85 to-transparent">
             <h3
-                class="w-full flex-1 self-center text-justify text-balance text-2xl lg:text-3xl font-bold text-neutral-600 px-8">
+                class="w-full flex-1 self-center text-justify text-balance text-lg lg:text-3xl font-bold text-neutral-600 lg:px-8">
                 En <b class="text-primary italic">PubliCalin</b> estamos comprometidos contigo, ofreciéndote
                 <b class="text-secondary">soluciones que van mas allá de tus expectativas</b>,
                 poniendo a tu disposición equipo de vanguardia tecnológica y personal altamente calificado.
             </h3>
             <div class="w-full max-w-xl flex-shrink-0 self-center">
-                <img src="{{ asset('assets/images/PLOTER.png') }}" alt="" class="w-full h-64 object-scale-down">
+                <img src="{{ asset('assets/images/PLOTER.png') }}" alt=""
+                    class="w-full h-48 lg:h-64 object-scale-down">
             </div>
         </div>
     </div>
 
 
-    <section class="w-full block my-20">
+    <section class="w-full block my-10 lg:my-20">
         <div class="max-w-6xl px-6 mx-auto">
             {{-- <div class="text-center max-w-3xl pb-20 mx-auto" data-aos="zoom-in">
                 <h2 class="text-5xl leading-10 font-semibold text-blue-700">
                     Put clarity at the center of your website</h2>
             </div> --}}
 
-            <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10" data-aos-id-featbl="">
+            <div class="w-full grid grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10" data-aos-id-featbl="">
                 <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
                     data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/IMPRESIONES.svg') }}" alt=""
-                        class="w-auto h-32 sm:h-40 block">
-                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Impresiones</h1>
+                        class="w-auto h-28 sm:h-40 block">
+                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Impresiones
+                    </h1>
                 </div>
-
-
 
                 <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
                     data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/LETREROS.svg') }}" alt=""
-                        class="w-auto h-32 sm:h-40 block">
-                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Letreros</h1>
+                        class="w-auto h-28 sm:h-40 block">
+                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Letreros</h1>
                 </div>
 
                 <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
                     data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/PLOTEOYCORTE.svg') }}" alt=""
-                        class="w-auto h-32 sm:h-40 block">
-                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Ploteo y corte</h1>
+                        class="w-auto h-28 sm:h-40 block">
+                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Ploteo y corte
+                    </h1>
                 </div>
 
                 <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
                     data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/CORTELASER.svg') }}" alt=""
-                        class="w-auto h-32 sm:h-40 block">
-                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Corte láser</h1>
+                        class="w-auto h-28 sm:h-40 block">
+                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Corte láser
+                    </h1>
                 </div>
 
                 <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
                     data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/DISENOGRAFICO.svg') }}" alt=""
-                        class="w-auto h-32 sm:h-40 block">
-                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Diseño gráfico</h1>
+                        class="w-auto h-28 sm:h-40 block">
+                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Diseño gráfico
+                    </h1>
                 </div>
 
 
                 <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
                     data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/ATENCIONPERSONALIZADA.svg') }}" alt=""
-                        class="w-auto h-32 sm:h-40 block">
-                    <h1 class="font-bold text-2xl sm:text-3xl text-center text-primary">Atención personalizada</h1>
+                        class="w-auto h-28 sm:h-40 block">
+                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Atención
+                        personalizada</h1>
                 </div>
             </div>
         </div>
@@ -79,9 +83,9 @@
     {{-- SECTION DE DATAS ICON --}}
     <section class="w-full block">
         <div
-            class="gap-8 sm:gap-10 flex flex-wrap justify-center sm:justify-between items-center py-8 px-4 mx-auto max-w-6xl lg:py-16 lg:px-6">
-            <div class="relative w-40">
-                <div class="relative w-40 h-40">
+            class="gap-8 sm:gap-10 flex flex-wrap justify-center sm:justify-between items-start py-8 px-4 mx-auto max-w-6xl lg:py-16 lg:px-6">
+            <div class="relative w-28 lg:w-40">
+                <div class="relative w-28 lg:w-40 h-28 lg:h-40">
                     <div
                         class="w-full h-full bg-white rounded-full absolute border border-dashed border-orange-500 flex items-center justify-center">
                         <img src="{{ asset('assets/images/ICONOIDEA.svg') }}" alt="" class="w-14 h-14 block">
@@ -90,13 +94,13 @@
                         class="w-full h-full rounded-full absolute  border-8 border-solid border-orange-500 border-r-transparent">
                     </div>
                 </div>
-                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                <h1 class="font-semibold text-sm lg:text-lg !leading-none text-neutral-600 mt-2 text-center">
                     Ideas y soluciones innovadoras para tus problemas publicitarios.
                 </h1>
             </div>
 
-            <div class="relative w-40">
-                <div class="relative w-40 h-40">
+            <div class="relative w-28 lg:w-40">
+                <div class="relative w-28 lg:w-40 h-28 lg:h-40">
                     <div
                         class="w-full h-full bg-white rounded-full absolute border border-dashed border-blue-700 flex items-center justify-center">
                         <img src="{{ asset('assets/images/ALTONIVEL.svg') }}" alt="" class="w-14 h-14 block">
@@ -105,13 +109,13 @@
                         class="w-full h-full rounded-full absolute  border-8 border-solid border-blue-700 border-r-transparent">
                     </div>
                 </div>
-                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                <h1 class="font-semibold text-sm lg:text-lg !leading-none text-neutral-600 mt-2 text-center">
                     Cada proyecto se realiza con un alto nivel de detalle
                 </h1>
             </div>
 
-            <div class="relative w-40">
-                <div class="relative w-40 h-40">
+            <div class="relative w-28 lg:w-40">
+                <div class="relative w-28 lg:w-40 h-28 lg:h-40">
                     <div
                         class="w-full h-full bg-white rounded-full absolute border border-dashed border-orange-500 flex items-center justify-center">
                         <img src="{{ asset('assets/images/TIEMPO.svg') }}" alt="" class="w-14 h-14 block">
@@ -120,13 +124,13 @@
                         class="w-full h-full rounded-full absolute  border-8 border-solid border-orange-500 border-r-transparent">
                     </div>
                 </div>
-                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                <h1 class="font-semibold text-sm lg:text-lg !leading-none text-neutral-600 mt-2 text-center">
                     Tiempo de entrega establecidos y concretos
                 </h1>
             </div>
 
-            <div class="relative w-40">
-                <div class="relative w-40 h-40">
+            <div class="relative w-28 lg:w-40">
+                <div class="relative w-28 lg:w-40 h-28 lg:h-40">
                     <div
                         class="w-full h-full bg-white rounded-full absolute border border-dashed border-blue-700 flex items-center justify-center">
                         <img src="{{ asset('assets/images/CALIDADPRECIO.svg') }}" alt=""
@@ -136,20 +140,20 @@
                         class="w-full h-full rounded-full absolute  border-8 border-solid border-blue-700 border-r-transparent">
                     </div>
                 </div>
-                <h1 class="font-semibold text-lg leading-5 text-neutral-600 mt-2 text-center">
+                <h1 class="font-semibold text-sm lg:text-lg !leading-none text-neutral-600 mt-2 text-center">
                     Buena relación
                 </h1>
             </div>
         </div>
     </section>
 
-    <section class="block my-20" data-aos="zoom-in">
-        <div class="w-full max-w-6xl px-6 mx-auto flex flex-col justify-center items-center">
-            <h2 class="text-5xl text-center font-semibold text-blue-700">
+    <section class="block my-5 lg:my-20" data-aos="zoom-in">
+        <div class="w-full max-w-6xl lg:px-6 mx-auto flex flex-col justify-center items-center">
+            <h2 class="w-full block py-6 text-2xl lg:text-5xl text-center font-semibold text-blue-700">
                 Nuestros Clientes</h2>
 
 
-            <div class="w-full relative py-10 px-10">
+            <div class="w-full relative px-8 lg:p-10">
                 <div class="w-full flex gap-10 overflow-x-hidden" id="sugerencias">
                     @for ($i = 0; $i < 10; $i++)
                         <div class="relative w-28 flex-shrink-0">
@@ -211,6 +215,26 @@
             </div> --}}
     </section>
 
+
+
+
+    <button onclick="redirectWhatsapp()"
+        class="fixed bottom-4 right-4 z-[999] inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25d366]">
+        <div class="absolute z-10 top-0 left-0 w-full h-full rounded-full bg-[#25d366] animate-ping"></div>
+        <div class="relative z-20">
+            <svg fill="#fff" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308.00 308.00" xml:space="preserve"
+                stroke="#fff" transform="matrix(1, 0, 0, 1, 0, 0)" class="block w-full h-full p-3">
+                <path
+                    d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z" />
+                <path
+                    d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
+            </svg>
+        </div>
+    </button>
+
+
+
     <!-- Código de instalación Cliengo para services.test -->
     <script type="text/javascript">
         (function() {
@@ -222,6 +246,12 @@
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ldk, s);
         })();
+
+        function redirectWhatsapp() {
+            var phoneNumber = "{{ config('services.whatsapp.phone') }}";
+            var message = "";
+            window.open("https://api.whatsapp.com/send?phone=" + phoneNumber, "_blank");
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             // $("#leftrecents, #leftsugerencias, #leftsimilares").prop('disabled', true);
