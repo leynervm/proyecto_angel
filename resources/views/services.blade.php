@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <section class="block my-20" data-aos="zoom-in">
+    <section class="block py-5 lg:py-10">
         <div class="w-full max-w-6xl px-6 mx-auto flex flex-col justify-center items-center">
-            <h2 class="text-5xl text-center font-semibold text-blue-700">
+            <h2 class="text-2xl sm:text-3xl lg:text-5xl text-center font-semibold text-blue-700 leading-none">
                 {{ __('Popular Services') }}</h2>
             {{-- <p class="mt-4 text-center max-w-96 font-medium text-neutral-500">
                 Here are some of the most popular events
@@ -12,20 +12,16 @@
     </section>
 
     <section x-data="cart"
-        class="w-full max-w-6xl mx-auto grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-3 mt-10 mb-5">
+        class="w-full max-w-6xl mx-auto grid grid-cols-[repeat(auto-fill,minmax(170px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-1 lg:gap-3 mb-5">
 
         @foreach ($services as $item)
             <div class="w-full block bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                 <div>
                     <img src="{{ $item->getImageURL() }}" alt="Product"
-                        class="h-72 w-full block object-scale-down rounded-t-xl" />
-                    <div class="px-4 py-3 w-full">
-                        {{-- <span class="text-gray-400 mr-3 uppercase text-xs">Brand</span> --}}
-                        <p class="text-lg font-bold text-black block capitalize">
+                        class="h-24 lg:h-64 w-full block object-scale-down rounded-t-xl" />
+                    <div class="p-1 sm:p-2 lg:px-4 lg:py-3 w-full">
+                        <p class="text-sm lg:text-lg font-bold text-neutral-800 block capitalize text-center">
                             {{ $item->name }}</p>
-
-                        {{-- <p class="text-[10px] mt-2 text-gray-600 cursor-auto leading-3">
-                            PRECIO REFERENCIAL</p> --}}
 
                         <p class="text-lg font-semibold text-black cursor-auto mb-3 text-center leading-4">
                             <small class="text-[9px] text-neutral-500 italic">PRECIO REGULAR</small>
@@ -34,10 +30,10 @@
                         </p>
                         {{-- @click="addcart(`{{ route('cart.add') }}`, '{{ $item->id }}')" --}}
                         <button
-                            class="w-full inline-flex items-center justify-center text-xs gap-2 bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition ease duration-150"
+                            class="w-full inline-flex items-center justify-center text-[10px] sm:text-xs gap-2 bg-green-600 text-white p-2.5 rounded-lg hover:bg-green-700 transition ease duration-150"
                             @click="addchat('{{ $item->name }}')">
                             <span>SOLICITAR VÍA WHATSAPP</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 block text-white"
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 sm:w-6 sm:h-6 block text-white"
                                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
                                 <path
                                     d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.3789 2.27907 14.6926 2.78382 15.8877C3.06278 16.5481 3.20226 16.8784 3.21953 17.128C3.2368 17.3776 3.16334 17.6521 3.01642 18.2012L2 22L5.79877 20.9836C6.34788 20.8367 6.62244 20.7632 6.87202 20.7805C7.12161 20.7977 7.45185 20.9372 8.11235 21.2162C9.30745 21.7209 10.6211 22 12 22Z" />

@@ -17,9 +17,9 @@
 
         @foreach ($services as $item)
             <tr>
-                <td class="w-32 p-2">
-                    <div class="w-32 h-32 block shadow rounded-lg p-1">
-                        <img class="w-full h-full object-scale-down overflow-hidden" src="{{ $item->getImageURL() }}" alt="">
+                <td class="p-2">
+                    <div class="w-20 h-20 block shadow rounded-lg overflow-hidden">
+                        <img class="w-full h-full block object-scale-down overflow-hidden" src="{{ $item->getImageURL() }}" alt="">
                     </div>
                 </td>
                 <td class="p-2">{{ $item->name }}</td>

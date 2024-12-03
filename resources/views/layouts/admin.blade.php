@@ -24,8 +24,8 @@
         <div class="fixed top-0 z-40 transition-all duration-300">
             <div class="flex justify-end">
                 <button @click="sidebarOpen = !sidebarOpen"
-                    :class="{ 'hover:bg-blue-700': !sidebarOpen, 'hover:bg-blue-900 text-white': sidebarOpen }"
-                    class="transition-all duration-300 w-8 p-1 mx-3 my-2 rounded-full focus:outline-none">
+                    :class="{ 'hover:bg-blue-700 hover:text-white': !sidebarOpen, 'hover:bg-blue-900 text-white': sidebarOpen }"
+                    class="transition-all duration-300 w-8 p-1 mx-3 my-2 rounded-full focus:outline-none text-blue-800">
                     <svg viewBox="0 0 20 20" class="w-6 h-6 fill-current" stroke="currentColor">
                         <path x-show="!sidebarOpen" fill-rule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
@@ -123,7 +123,7 @@
             <script>
                 function sidebar() {
                     return {
-                        sidebarOpen: true,
+                        sidebarOpen: false,
                         sidebarProductMenuOpen: false,
                         openSidebar() {
                             this.sidebarOpen = true
@@ -156,7 +156,7 @@
         </div>
 
         <div :class="{ 'ml-56': sidebarOpen, 'ml-0 pt-12': !sidebarOpen }"
-            class="w-full flex-1 flex-col p-3 ml-56 transition-all duration-300 md:flex md:flex-col min-h-screen">
+            class="w-full flex-1 flex-col p-1 lg:p-3 ml-56 transition-all duration-300 md:flex md:flex-col min-h-screen">
 
             {{ $slot }}
 

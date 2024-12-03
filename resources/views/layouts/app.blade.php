@@ -27,37 +27,34 @@
     <div class="relative min-h-screen bg-gray-100">
         <button @click="menu =!menu"
             class="fixed top-2 left-2 z-[9999] lg:hidden p-2.5 bg-blue-700 rounded-lg cursor-pointer text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 0 25 25" fill="none" stroke="currentColor"
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="block w-6 h-6">
-                <path
-                    d="M19 3.32001H16C14.8954 3.32001 14 4.21544 14 5.32001V8.32001C14 9.42458 14.8954 10.32 16 10.32H19C20.1046 10.32 21 9.42458 21 8.32001V5.32001C21 4.21544 20.1046 3.32001 19 3.32001Z" />
-                <path
-                    d="M8 3.32001H5C3.89543 3.32001 3 4.21544 3 5.32001V8.32001C3 9.42458 3.89543 10.32 5 10.32H8C9.10457 10.32 10 9.42458 10 8.32001V5.32001C10 4.21544 9.10457 3.32001 8 3.32001Z" />
-                <path
-                    d="M19 14.32H16C14.8954 14.32 14 15.2154 14 16.32V19.32C14 20.4246 14.8954 21.32 16 21.32H19C20.1046 21.32 21 20.4246 21 19.32V16.32C21 15.2154 20.1046 14.32 19 14.32Z" />
-                <path
-                    d="M8 14.32H5C3.89543 14.32 3 15.2154 3 16.32V19.32C3 20.4246 3.89543 21.32 5 21.32H8C9.10457 21.32 10 20.4246 10 19.32V16.32C10 15.2154 9.10457 14.32 8 14.32Z" />
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block w-6 h-6">
+                <path d="M4 6H20M4 12H20M4 18H20" />
             </svg>
         </button>
 
-        <nav class="w-full fixed h-screen overflow-y-auto lg:translate-x-0 lg:h-auto top-0 left-0 z-[999] bg-white lg:relative lg:p-2 text-gray-200 duration-300"
-            :class="menu ? 'translate-x-0' : '-translate-x-full'">
+        <nav class="w-full relative bg-white text-gray-200">
             <div class="relative w-full lg:px-3 flex flex-col lg:flex-row justify-between gap-2 items-center">
-                <div class="w-full lg:w-auto pt-1 pr-2 lg:p-0">
-                    <a href="/" class="flex-1 flex items-center justify-end h-full">
+                <div class="w-full lg:w-auto p-1 lg:p-0">
+                    <a href="/" class="flex-1 flex items-center justify-start sm:justify-end h-full">
                         <img src="{{ asset('assets/images/LOGOCALIN.svg') }}" alt=""
-                            class="h-12 lg:h-16 w-auto block object-cover object-right">
+                            class="h-12 pl-14 sm:p-0 lg:h-16 w-auto block object-cover object-right">
                     </a>
                 </div>
 
-                <ul class="w-full flex-1 flex flex-col lg:flex-row lg:justify-end lg:gap-3 items-center">
+                <ul class="w-full flex-1 fixed lg:relative h-screen overflow-y-auto lg:translate-x-0 lg:h-auto top-0 left-0 z-[999] bg-white flex flex-col lg:flex-row lg:justify-end lg:gap-3 items-center duration-300"
+                    :class="menu ? 'translate-x-0' : '-translate-x-full'">
+                    <li class="h-14 p-1 lg:hidden">
+                        <img src="{{ asset('assets/images/LOGOCALIN.svg') }}" alt=""
+                            class="h-full w-auto block object-cover object-center">
+                    </li>
                     <li class="text-sm w-full block lg:inline-block lg:w-auto">
                         <a href="{{ route('home') }}"
                             class="link-nav group {{ request()->routeIs('home') ? 'link-active' : '' }}"
                             style="text-underline-offset: 8px;">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="w-4 h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
+                                class="w-8 lg:w-4 h-8 lg:h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
                                 <path d="M2 10L10.7506 2.99951C11.481 2.41516 12.519 2.41516 13.2494 2.99951L22 10" />
                                 <path d="M4 8.5V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V8.5" />
                                 <path d="M12 17V18" />
@@ -71,7 +68,7 @@
                             style="text-underline-offset: 8px;">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="w-4 h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
+                                class="w-8 h-8 lg:w-4 lg:h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
                                 <path
                                     d="M18 3H6C5.06812 3 4.60218 3 4.23463 3.15224C3.74458 3.35523 3.35523 3.74458 3.15224 4.23463C3 4.60218 3 5.06812 3 6C3 6.93188 3 7.39782 3.15224 7.76537C3.35523 8.25542 3.74458 8.64477 4.23463 8.84776C4.60218 9 5.06812 9 6 9H18C18.9319 9 19.3978 9 19.7654 8.84776C20.2554 8.64477 20.6448 8.25542 20.8478 7.76537C21 7.39782 21 6.93188 21 6C21 5.06812 21 4.60218 20.8478 4.23463C20.6448 3.74458 20.2554 3.35523 19.7654 3.15224C19.3978 3 18.9319 3 18 3Z" />
                                 <path
@@ -94,7 +91,7 @@
                             style="text-underline-offset: 8px;">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="w-4 h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
+                                class="w-8 h-8 lg:w-4 lg:h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
                                 <path
                                     d="M17 11.8045C17 11.4588 17 11.286 17.052 11.132C17.2032 10.6844 17.6018 10.5108 18.0011 10.3289C18.45 10.1244 18.6744 10.0222 18.8968 10.0042C19.1493 9.98378 19.4022 10.0382 19.618 10.1593C19.9041 10.3198 20.1036 10.6249 20.3079 10.873C21.2513 12.0188 21.7229 12.5918 21.8955 13.2236C22.0348 13.7334 22.0348 14.2666 21.8955 14.7764C21.6438 15.6979 20.8485 16.4704 20.2598 17.1854C19.9587 17.5511 19.8081 17.734 19.618 17.8407C19.4022 17.9618 19.1493 18.0162 18.8968 17.9958C18.6744 17.9778 18.45 17.8756 18.0011 17.6711C17.6018 17.4892 17.2032 17.3156 17.052 16.868C17 16.714 17 16.5412 17 16.1955V11.8045Z" />
                                 <path
@@ -110,7 +107,7 @@
                             style="text-underline-offset: 8px;">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="w-4 h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
+                                class="w-8 h-8 lg:w-4 lg:h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
                                 <circle cx="17" cy="18" r="2" />
                                 <circle cx="7" cy="18" r="2" />
                                 <path
@@ -128,7 +125,7 @@
                             <a href="{{ route('dashboard.orders') }}" class="link-nav" style="text-underline-offset: 8px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                                    class="w-4 h-4 block">
+                                    class="w-8 h-8 lg:w-4 lg:h-4 block">
                                     <path
                                         d="M2.5 12C2.5 7.52167 2.5 5.2825 3.89124 3.89126C5.28249 2.50002 7.52166 2.50002 12 2.50002C16.4783 2.50002 18.7175 2.50002 20.1088 3.89126C21.5 5.2825 21.5 7.52167 21.5 12C21.5 16.4784 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4784 2.5 12Z">
                                     </path>
@@ -146,7 +143,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round"
-                                    class="w-4 h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
+                                    class="w-8 h-8 lg:w-4 lg:h-4 block {{ request()->routeIs('home') ? 'link-active' : '' }}">
                                     <path
                                         d="M12.5 22H6.59087C5.04549 22 3.81631 21.248 2.71266 20.1966C0.453366 18.0441 4.1628 16.324 5.57757 15.4816C7.97679 14.053 10.8425 13.6575 13.5 14.2952" />
                                     <path
