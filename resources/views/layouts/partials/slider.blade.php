@@ -16,25 +16,48 @@
         },
     ],
     currentSlideIndex: 1,
+    interval: null,
     previous() {
         if (this.currentSlideIndex > 1) {
             this.currentSlideIndex = this.currentSlideIndex - 1
         } else {
-            // If it's the first slide, go to the last slide           
             this.currentSlideIndex = this.slides.length
         }
+        this.resetSlide();
     },
     next() {
+    console.log(next', this.currentSlideIndex)
         if (this.currentSlideIndex < this.slides.length) {
             this.currentSlideIndex = this.currentSlideIndex + 1
         } else {
-            // If it's the last slide, go to the first slide    
             this.currentSlideIndex = 1
         }
+        this.resetSlide();
     },
-}" class="relative w-full overflow-hidden">
+    startAutoSlide() {
+        this.interval = setInterval(() => {
+            this.next();
+        }, 3000);
+    },
+    stopAutoSlide() {
+        clearInterval(this.interval);
+        this.interval = null;
+    },
+    resetSlide() {
+        const resetAutoSlide = () => {
+            this.stopAutoSlide();
+            this.startAutoSlide();
+        };
+    },
+    setCurrentIndex(index) {
+        this.currentSlideIndex = index + 1;
+        this.resetSlide();
+    },
+    init() {
+        this.startAutoSlide();
+    }
+}" x-init="init()" class="relative w-full overflow-hidden">
 
-    <!-- previous button -->
     <button type="button"
         class="absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-slate-700 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:outline-offset-0 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:bg-slate-900/60 dark:focus-visible:outline-blue-600"
         aria-label="previous slide" x-on:click="previous()">
@@ -44,7 +67,6 @@
         </svg>
     </button>
 
-    <!-- next button -->
     <button type="button"
         class="absolute right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-slate-700 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:outline-offset-0 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:bg-slate-900/60 dark:focus-visible:outline-blue-600"
         aria-label="next slide" x-on:click="next()">
@@ -54,8 +76,6 @@
         </svg>
     </button>
 
-    <!-- slides -->
-    <!-- Change min-h-[50svh] to your preferred height size -->
     <div class="relative min-h-[75svh] w-full">
         <template x-for="(slide, index) in slides">
             <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0"
@@ -76,12 +96,11 @@
         </template>
     </div>
 
-    <!-- indicators -->
     <div class="absolute rounded-xl bottom-3 md:bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-4 md:gap-3 px-1.5 py-1 md:px-2"
         role="group" aria-label="slides">
         <template x-for="(slide, index) in slides">
-            <button class="size-2 cursor-pointer rounded-full transition" x-on:click="currentSlideIndex = index + 1"
-                x-bind:class="[currentSlideIndex === index + 1 ? 'bg-slate-300' : 'bg-slate-300/50']"
+            <button class="size-2 cursor-pointer rounded-full transition" x-on:click="setCurrentIndex(index)"
+                x-bind:class="[currentSlideIndex === index + 1 ? 'bg-blue-800' : 'bg-slate-300/50']"
                 x-bind:aria-label="'slide ' + (index + 1)"></button>
         </template>
     </div>
