@@ -12,8 +12,6 @@ class AdminController extends Controller
         return view('dashboard');
     }
 
-   
-
     public function services()
     {
         return view('admin.services.index');
@@ -22,6 +20,11 @@ class AdminController extends Controller
     public function estados()
     {
         return view('admin.estados.index');
+    }
+
+    public function payments()
+    {
+        return view('admin.payments.index');
     }
 
     

@@ -153,6 +153,8 @@ return [
         'price'                 =>  'precio',
         'service_id'            =>  'servicio',
         'estado_id'                =>  'estado tracking',
+        'amount'                =>  'monto',
+        'methodpay'                =>  'forma de pago',
 
     ],
 

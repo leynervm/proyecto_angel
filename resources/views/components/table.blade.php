@@ -1,6 +1,6 @@
-<div class="w-full block bg-white rounded-lg shadow-lg">
-    <table class="w-full overflow-x-auto text-[10px]">
-        <thead>
+<div {{ $attributes->merge(['class' => 'w-full overflow-x-auto bg-white rounded-lg shadow-lg']) }}>
+    <table class="w-full text-xs">
+        <thead class="text-principal bg-blue-100 rounded-t-lg">
             {{ $header }}
         </thead>
         <tbody>

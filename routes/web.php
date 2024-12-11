@@ -33,6 +33,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('/services', [AdminController::class, 'services'])->name('admin.services');
         Route::get('/estados', [AdminController::class, 'estados'])->name('admin.estados');
 
+        Route::get('/historial-pagos', [AdminController::class, 'payments'])->name('admin.payments');
+
         Route::post('/json/services', [HomeController::class, 'jsonservices'])->name('admin.services.json');
     });
 

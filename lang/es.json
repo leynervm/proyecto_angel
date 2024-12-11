@@ -48,7 +48,7 @@
     "Created": "Creado",
     "Created.": "Creado.",
     "Current Password": "Contraseña actual",
-    "Dashboard": "Panel",
+    "Dashboard": "Administrar",
     "Delete": "Eliminar",
     "Delete Account": "Borrar cuenta",
     "Delete API Token": "Borrar token API",
@@ -236,5 +236,6 @@
     "Contact Us" : "Contáctenos",
     "Home": "Inicio",
     "Orders": "Ordenes",
-    "Services": "Servicios"
+    "Services": "Servicios",
+    "Save payment": "Registrar Pago"
 }

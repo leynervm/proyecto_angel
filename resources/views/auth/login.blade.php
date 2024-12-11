@@ -55,7 +55,7 @@
                         @endif
 
                         <button
-                            class="bg-primary w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner transform hover:-translate-x hover:scale-105 focus:outline-none transition ease-in-out duration-500">
+                            class="bg-principal w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner transform hover:-translate-x hover:scale-105 focus:outline-none transition ease-in-out duration-500">
                             <span class="inline-block mr-2">{{ __('Log in') }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" class="w-4 h-4 inline-block">

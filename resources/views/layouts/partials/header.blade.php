@@ -8,12 +8,12 @@
         </div>
 
         <div class="flex-shrink-0 xl:pr-5">
-            <button class="button-sidebar xl:hidden px-2" type="button">
+            <a class="button-sidebar xl:hidden px-2" href="/">
                 <div class="w-full flex-1 p-1 xl:hidden h-full">
                     <img class="h-full max-w-40 w-auto m-auto object-center object-scale-down"
                         src="{{ asset('assets/images/LOGOCALIN.svg') }}" alt="">
                 </div>
-            </button>
+            </a>
         </div>
 
         <div class="mr-6 relative flex-1 hidden xl:flex" @click.away="products= [],selectedIndex=-1">
@@ -75,6 +75,14 @@
                         {{ __('Services') }}
                     </a>
                 </li>
+                @auth
+                    <li class="relative h-[68%] flex items-center self-center">
+                        <a href="{{ route('admin') }}"
+                            class="{{ request()->routeIs('admin') ? 'link-header-active' : '' }} item-link-header">
+                            {{ __('Dashboard') }}
+                        </a>
+                    </li>
+                @endauth
             </ul>
         </div>
     </div>

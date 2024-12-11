@@ -11,6 +11,10 @@ class Order extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $casts = [
+        'fechaentrega' => 'date:Y-m-d'
+    ];
+
     protected $fillable = [
         'purchase',
         'date',
@@ -33,6 +37,11 @@ class Order extends Model
     public function trackings(): HasMany
     {
         return $this->hasMany(Tracking::class);
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
     }
 
     public function isFinish()
