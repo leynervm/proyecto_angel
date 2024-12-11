@@ -2,7 +2,7 @@
     <section class="w-full lg:max-w-6xl p-1 py-10 lg:p-3 lg:py-20 mx-auto flex flex-col justify-center items-center" data-aos="zoom-in">
         <form
             class="w-full h-full mx-auto bg-white rounded-3xl lg:max-w-lg relative flex flex-col gap-2 items-centers justify-center p-3"
-            action="{{ route('tracking.results') }}" method="GET">
+            action="{{ route('orders.search.results') }}" method="GET">
             {{-- @method('get') --}}
 
             <h1 class="text-xl md:text-3xl font-semibold text-center lg:py-3 text-primary leading-none">BUSCAR PEDIDO</h1>

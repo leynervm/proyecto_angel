@@ -16,13 +16,13 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard.orders') }}" :active="request()->routeIs('dashboard.orders')">
+                    <x-nav-link href="{{ route('admin.orders') }}" :active="request()->routeIs('admin.orders')">
                         {{ __('Orders') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard.services') }}" :active="request()->routeIs('dashboard.services')">
+                    <x-nav-link href="{{ route('admin.services') }}" :active="request()->routeIs('admin.services')">
                         {{ __('Services') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard.estados') }}" :active="request()->routeIs('dashboard.estados')">
+                    <x-nav-link href="{{ route('admin.estados') }}" :active="request()->routeIs('admin.estados')">
                         {{ __('Estados') }}
                     </x-nav-link>
                 </div>
@@ -161,13 +161,13 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard.orders') }}" :active="request()->routeIs('dashboard.orders')">
+            <x-responsive-nav-link href="{{ route('admin.orders') }}" :active="request()->routeIs('admin.orders')">
                 {{ __('Orders') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard.services') }}" :active="request()->routeIs('dashboard.services')">
+            <x-responsive-nav-link href="{{ route('admin.services') }}" :active="request()->routeIs('admin.services')">
                 {{ __('Services') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard.estados') }}" :active="request()->routeIs('dashboard.estados')">
+            <x-responsive-nav-link href="{{ route('admin.estados') }}" :active="request()->routeIs('admin.estados')">
                 {{ __('Estados') }}
             </x-responsive-nav-link>
         </div>

@@ -24,16 +24,19 @@
 <body class="font-sans lg:overflow-y-auto" x-data="{ menu: false }" x-init=""
     :class="menu ? 'overflow-hidden ' : 'overflow-y-auto'">
 
+    @include('layouts.partials.header')
     <div class="relative min-h-screen bg-gray-100">
-        <button @click="menu =!menu"
+
+
+        {{-- <button @click="menu =!menu"
             class="fixed top-2 left-2 z-[9999] lg:hidden p-2.5 bg-blue-700 rounded-lg cursor-pointer text-white">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block w-6 h-6">
                 <path d="M4 6H20M4 12H20M4 18H20" />
             </svg>
-        </button>
+        </button> --}}
 
-        <nav class="w-full relative bg-white text-gray-200">
+        {{-- <nav class="w-full relative bg-white text-gray-200">
             <div class="relative w-full lg:px-3 flex flex-col lg:flex-row justify-between gap-2 items-center">
                 <div class="w-full lg:w-auto p-1 lg:p-0">
                     <a href="/" class="flex-1 flex items-center justify-start sm:justify-end h-full">
@@ -122,7 +125,7 @@
 
                     @auth
                         <li class="w-full lg:w-auto text-sm">
-                            <a href="{{ route('dashboard.orders') }}" class="link-nav" style="text-underline-offset: 8px;">
+                            <a href="{{ route('admin.orders') }}" class="link-nav" style="text-underline-offset: 8px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"
                                     class="w-8 h-8 lg:w-4 lg:h-4 block">
@@ -156,7 +159,7 @@
                     @endauth
                 </ul>
             </div>
-        </nav>
+        </nav> --}}
 
         <!-- Page Content -->
         <main>

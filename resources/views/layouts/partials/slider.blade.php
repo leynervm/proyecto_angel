@@ -1,107 +1,148 @@
-<div x-data="{
-    slides: [{
-            imgSrc: '{{ asset('assets/images/PORTADA1.jpg') }}',
-            imgAlt: 'Vibrant abstract painting with swirling blue and light pink hues on a canvas.',
-            title: ``
-        },
-        {
-            imgSrc: '{{ asset('assets/images/PORTADA2.jpg') }}',
-            imgAlt: 'Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.',
-            title: ''
-        },
-        {
-            imgSrc: '{{ asset('assets/images/PORTADA1.jpg') }}',
-            imgAlt: 'Vibrant abstract painting with swirling blue and purple hues on a canvas.',
-            title: ''
-        },
-    ],
-    currentSlideIndex: 1,
-    interval: null,
-    previous() {
-        if (this.currentSlideIndex > 1) {
-            this.currentSlideIndex = this.currentSlideIndex - 1
-        } else {
-            this.currentSlideIndex = this.slides.length
-        }
-        this.resetSlide();
-    },
-    next() {
-    console.log(next', this.currentSlideIndex)
-        if (this.currentSlideIndex < this.slides.length) {
-            this.currentSlideIndex = this.currentSlideIndex + 1
-        } else {
-            this.currentSlideIndex = 1
-        }
-        this.resetSlide();
-    },
-    startAutoSlide() {
-        this.interval = setInterval(() => {
-            this.next();
-        }, 3000);
-    },
-    stopAutoSlide() {
-        clearInterval(this.interval);
-        this.interval = null;
-    },
-    resetSlide() {
-        const resetAutoSlide = () => {
-            this.stopAutoSlide();
-            this.startAutoSlide();
-        };
-    },
-    setCurrentIndex(index) {
-        this.currentSlideIndex = index + 1;
-        this.resetSlide();
-    },
-    init() {
-        this.startAutoSlide();
-    }
-}" x-init="init()" class="relative w-full overflow-hidden">
-
-    <button type="button"
-        class="absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-slate-700 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:outline-offset-0 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:bg-slate-900/60 dark:focus-visible:outline-blue-600"
-        aria-label="previous slide" x-on:click="previous()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3"
-            class="size-5 md:size-6 pr-0.5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-        </svg>
-    </button>
-
-    <button type="button"
-        class="absolute right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-slate-700 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:outline-offset-0 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:bg-slate-900/60 dark:focus-visible:outline-blue-600"
-        aria-label="next slide" x-on:click="next()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none"
-            stroke-width="3" class="size-5 md:size-6 pl-0.5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-        </svg>
-    </button>
-
-    <div class="relative min-h-[75svh] w-full">
-        <template x-for="(slide, index) in slides">
-            <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0"
-                x-transition.opacity.duration.1000ms>
-
-                <!-- Title and description -->
-                <div
-                    class="lg:px-32 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 {{-- bg-gradient-to-t from-slate-900/85 to-transparent --}} px-16 py-12 text-center">
-                    <h3 class="w-full lg:w-[80%] text-balance text-2xl lg:text-3xl font-bold text-white"
-                        x-html="slide.title" x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"></h3>
-                    {{-- <p class="lg:w-1/2 w-full text-pretty text-sm text-slate-300" x-text="slide.description"
-                        x-bind:id="'slide' + (index + 1) + 'Description'"></p> --}}
+<div class="w-full max-w-full p-0">
+    <div class="relative {{ count($sliders) > 1 ? '' : '' }}">
+        <div class="relative w-full overflow-hidden h-0 pt-0 min-h-[480px] xs:min-h-[620px] sm:min-h-[720px] md:pt-[29%] md:min-h-[290px]"
+            id="slider">
+            @foreach ($sliders as $item)
+                <div class="carousel-item {{ $loop->first ? 'activo' : '' }}">
+                    <div class="h-full flex relative efecto-slider">
+                        <div class="lazyload-wrapper">
+                            <picture>
+                                {{-- <source media="(width >= 900px)" srcset="logo-large.png"> --}}
+                                <source media="(min-width : 768px)" srcset="{{ $item->url }}">
+                                <source srcset="{{ $item->urlmobile }}">
+                                <img src="{{ $item->url }}" alt="{{ $item->url }}"
+                                    class="absolute w-full h-full object-cover">
+                            </picture>
+                        </div>
+                        <div class="carousel-item-link">
+                            @if ($item->link)
+                                <a href="{{ $item->link }}"></a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
+            @endforeach
+        </div>
+        @if (count($sliders) > 1)
+            <ol class="flex justify-center items-center gap-3 mt-3" id="indice-slider">
+                @foreach ($sliders as $item)
+                    <li class="indicador-slider {{ $loop->first ? 'activo' : '' }}"></li>
+                @endforeach
+            </ol>
+        @endif
 
-                <img class="absolute w-full h-full inset-0 object-cover text-slate-700 dark:text-slate-300"
-                    x-bind:src="slide.imgSrc" x-bind:alt="slide.imgAlt" />
-            </div>
-        </template>
+        @if (count($sliders) > 1)
+            <button type="button" id="previusslider"
+                class="absolute w-auto h-12 rounded-r m-auto top-0 left-0 bottom-0 z-[5] text-next-700 text-center opacity-40 flex justify-center items-center hover:opacity-60 transition-opacity ease-in-out duration-150">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349 512" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full block p-1">
+                    <path
+                        d="M1.843 262.032 170.39 509.5c1.088 1.605 2.564 2.5 4.11 2.5h168.548c2.348 0 4.476-2.081 5.37-5.264.902-3.191.402-6.861-1.26-9.301L182.718 256l164.44-241.434c1.661-2.44 2.161-6.11 1.26-9.3-.894-3.183-3.021-5.265-5.37-5.265H174.5c-1.546 0-3.022.896-4.11 2.5L1.842 249.968c-2.272 3.336-2.272 8.729 0 12.065z" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button type="button" id="nextslider"
+                class="absolute w-auto h-12 rounded-l m-auto top-0 right-0 bottom-0 z-[5] text-next-700 text-center opacity-40 flex justify-center items-center hover:opacity-60 transition-opacity ease-in-out duration-150">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349 512" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full block p-1">
+                    <path
+                        d="m347.01895,249.967l-168.54792,-247.467c-1.08703,-1.604 -2.56296,-2.5 -4.10905,-2.5l-168.5486,0c-2.34774,0 -4.47548,2.082 -5.37044,5.265c-0.90109,3.191 -0.40117,6.861 1.26139,9.301l164.43955,241.434l-164.43955,241.433c-1.66187,2.441 -2.1618,6.11 -1.26139,9.301c0.89496,3.183 3.02202,5.265 5.37044,5.265l168.5486,0c1.54609,0 3.02202,-0.896 4.10905,-2.5l168.5486,-247.467c2.27213,-3.336 2.27213,-8.729 -0.00068,-12.065z" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </button>
+        @endif
     </div>
 
-    <div class="absolute rounded-xl bottom-3 md:bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-4 md:gap-3 px-1.5 py-1 md:px-2"
-        role="group" aria-label="slides">
-        <template x-for="(slide, index) in slides">
-            <button class="size-2 cursor-pointer rounded-full transition" x-on:click="setCurrentIndex(index)"
-                x-bind:class="[currentSlideIndex === index + 1 ? 'bg-blue-800' : 'bg-slate-300/50']"
-                x-bind:aria-label="'slide ' + (index + 1)"></button>
-        </template>
-    </div>
+    @if (count($sliders) > 1)
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slider = document.getElementById('slider');
+                const indice_slider = document.getElementById('indice-slider');
+                const idicador_items = indice_slider.querySelectorAll('.indicador-slider');
+                const items = slider.querySelectorAll('.carousel-item');
+                const nextButton = document.getElementById('nextslider');
+                const prevButton = document.getElementById('previusslider');
+                let currentIndex = 0;
+                let autoSlideInterval;
+
+                const showSlide = (index, direction) => {
+                    if (direction === 'next') {
+                        // items[index].classList.add('entrante');
+                        // items[currentIndex].classList.remove('saliente');
+                    } else if (direction === 'prev') {
+                        // items[currentIndex].classList.add('entrante');
+                        // items[index].classList.add('saliente');
+                    }
+
+                    changeImageSlider(index);
+                };
+
+                const nextSlide = () => {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    showSlide(currentIndex, 'next');
+                    resetAutoSlide();
+                };
+
+                const prevSlide = () => {
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                    showSlide(currentIndex, 'prev');
+                    resetAutoSlide();
+                };
+
+                const changeImageSlider = (index) => {
+                    items.forEach((item, i) => {
+                        if (i === index) {
+                            item.classList.add('activo');
+                        } else {
+                            item.classList.remove('activo');
+                        }
+                    });
+
+                    idicador_items.forEach((item, i) => {
+                        if (i === index) {
+                            item.classList.add('activo');
+                        } else {
+                            item.classList.remove('activo');
+                        }
+                    });
+
+                    currentIndex = index;
+                }
+
+                const startAutoSlide = () => {
+                    autoSlideInterval = setInterval(nextSlide, 5000);
+                };
+
+                const stopAutoSlide = () => {
+                    clearInterval(autoSlideInterval);
+                };
+
+                const resetAutoSlide = () => {
+                    stopAutoSlide();
+                    startAutoSlide();
+                };
+
+                idicador_items.forEach((button, e) => {
+                    button.addEventListener('click', function(e) {
+                        changeImageSlider($(this).index());
+                        resetAutoSlide();
+                    })
+                })
+
+                if (nextButton) {
+                    nextButton.addEventListener('click', nextSlide);
+                }
+
+                if (prevButton) {
+                    prevButton.addEventListener('click', prevSlide);
+                }
+                slider.addEventListener('mouseover', stopAutoSlide);
+                slider.addEventListener('mouseout', startAutoSlide);
+
+                showSlide(currentIndex);
+                startAutoSlide();
+
+            });
+        </script>
+    @endif
 </div>

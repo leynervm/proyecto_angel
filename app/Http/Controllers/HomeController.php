@@ -11,7 +11,27 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view('welcome');
+        $sliders = response()->json([
+            [
+                'id' => 1,
+                'url' => asset('assets/images/portada_1.jpg'),
+                'urlmobile' => asset('assets/images/portada_mobile_1.jpg'),
+                'link' => null,
+            ],
+            [
+                'id' => 2,
+                'url' => asset('assets/images/portada_2.jpg'),
+                'urlmobile' => asset('assets/images/portada_mobile_2.jpg'),
+                'link' => null,
+            ],
+            [
+                'id' => 3,
+                'url' => asset('assets/images/portada_3.jpg'),
+                'urlmobile' => asset('assets/images/portada_mobile_3.jpg'),
+                'link' => null,
+            ]
+        ])->getData();
+        return view('welcome', compact('sliders'));
     }
 
     public function services()

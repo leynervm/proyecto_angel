@@ -264,7 +264,7 @@
                 },
                 fetchProducts() {
                     this.error = '',
-                        fetch(`{{ route('dashboard.services.json') }}`, {
+                        fetch(`{{ route('admin.services.json') }}`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

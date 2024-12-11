@@ -24,16 +24,16 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
-    ->prefix('dashboard')->group(function () {
-        // Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+    ->prefix('admin')->group(function () {
 
-        Route::get('/orders', [OrderController::class, 'index'])->name('dashboard.orders');
+        Route::get('/', [AdminController::class, 'dashboard'])->name('admin');
+        Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
         Route::get('/orders/{order}/show', [OrderController::class, 'show'])->name('dashboard.orders.show');
 
-        Route::get('/services', [AdminController::class, 'services'])->name('dashboard.services');
-        Route::get('/estados', [AdminController::class, 'estados'])->name('dashboard.estados');
+        Route::get('/services', [AdminController::class, 'services'])->name('admin.services');
+        Route::get('/estados', [AdminController::class, 'estados'])->name('admin.estados');
 
-        Route::post('/json/services', [HomeController::class, 'jsonservices'])->name('dashboard.services.json');
+        Route::post('/json/services', [HomeController::class, 'jsonservices'])->name('admin.services.json');
     });
 
 
@@ -44,7 +44,7 @@ Route::post('/cart/add', [HomeController::class, 'addcart'])->name('cart.add');
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
 Route::get('/tracking', [HomeController::class, 'tracking'])->name('tracking');
-Route::get('/tracking/search/results', [HomeController::class, 'results'])->name('tracking.results');
+Route::get('/tracking/search/results', [HomeController::class, 'results'])->name('orders.search.results');
 // Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/orders', [HomeController::class, 'orders'])->name('orders');
