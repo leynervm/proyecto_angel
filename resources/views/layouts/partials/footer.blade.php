@@ -2,7 +2,7 @@
     <div class="max-w-6xl grid grid-cols-1 md:grid-cols-2 mx-auto">
         <div class="">
             <div class="w-full h-24">
-                <img class="h-full w-auto max-w-xs object-scale-down block mx-auto text-center"
+                <img class="h-full w-auto max-w-xs object-scale-down object-left-top block mx-auto text-center"
                     src="{{ asset('assets/images/LOGOLOGOBLANCOPARAFONDOAZUL.svg') }}" alt="">
             </div>
             <div class="text-center p-3 w-full block">
@@ -31,8 +31,24 @@
                 </div>
                 <div class="my-3">
                     <ul class="text-white text-xs md:text-sm font-medium">
-                        <li>996 976 634</li>
-                        <li>976 120 205</li>
+                        <li class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"
+                                class="block size-5 text-green-600">
+                                <path
+                                    d="M3.29404 1.58612C4.25932 0.620833 5.88661 0.884906 6.49711 2.1059L8.5543 6.22028C8.93929 6.99026 8.78838 7.92021 8.17966 8.52893L4.86304 11.8455C6.35673 14.6391 8.6553 16.9376 11.4488 18.4313L14.7654 15.1147C15.3742 14.506 16.3041 14.3551 17.0741 14.7401L21.1885 16.7973C22.4095 17.4078 22.6735 19.035 21.7083 20.0003L20.2751 21.4335C19.7191 21.9895 18.9422 22.3313 18.1058 22.2912C8.86166 21.8476 1.44676 14.4327 1.00319 5.18854C0.963054 4.35216 1.30492 3.57524 1.86089 3.01927L3.29404 1.58612Z" />
+                            </svg>
+                            996 976 634
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"
+                                class="block size-5 text-green-600">
+                                <path
+                                    d="M3.29404 1.58612C4.25932 0.620833 5.88661 0.884906 6.49711 2.1059L8.5543 6.22028C8.93929 6.99026 8.78838 7.92021 8.17966 8.52893L4.86304 11.8455C6.35673 14.6391 8.6553 16.9376 11.4488 18.4313L14.7654 15.1147C15.3742 14.506 16.3041 14.3551 17.0741 14.7401L21.1885 16.7973C22.4095 17.4078 22.6735 19.035 21.7083 20.0003L20.2751 21.4335C19.7191 21.9895 18.9422 22.3313 18.1058 22.2912C8.86166 21.8476 1.44676 14.4327 1.00319 5.18854C0.963054 4.35216 1.30492 3.57524 1.86089 3.01927L3.29404 1.58612Z" />
+                            </svg>
+                            976 120 205
+                        </li>
                         <li>gigantocalin@outlook.es</li>
                     </ul>
                 </div>

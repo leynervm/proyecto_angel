@@ -67,13 +67,15 @@
                                         class="mb-0.5 font-semibold {{ $item->estado->isFinish() ? 'text-blue-500' : 'text-neutral-700' }} uppercase">
                                         {{ \Carbon\Carbon::parse($item->date)->translatedFormat('l, d \d\e F \d\e Y h:i A') }}
                                     </h4>
-                                    <p class="text-sm {{ $item->estado->isFinish() ? 'text-blue-500' : 'text-neutral-500' }}">{{ $item->estado->name }}</p>
+                                    <p
+                                        class="text-sm {{ $item->estado->isFinish() ? 'text-blue-500' : 'text-neutral-500' }}">
+                                        {{ $item->estado->name }}</p>
                                 </li>
                             @endforeach
                         </ol>
 
                         <div class="">
-                            <a href="{{ route('tracking') }}"
+                            <a href="/"
                                 class="w-full block border-2 p-2.5 rounded-lg border-blue-500 text-center text-blue-700 hover:bg-blue-700 hover:text-white cursor-pointer transition ease-in-out duration-150">
                                 Inicio</a>
                         </div>

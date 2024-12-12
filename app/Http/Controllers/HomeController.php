@@ -31,7 +31,22 @@ class HomeController extends Controller
                 'link' => null,
             ]
         ])->getData();
-        return view('welcome', compact('sliders'));
+
+        $clientes = response()->json([
+            ['image' => asset('assets/images/marcas/ABBY.svg')],
+            ['image' => asset('assets/images/marcas/AUTONORT.svg')],
+            ['image' => asset('assets/images/marcas/CADILAD.svg')],
+            ['image' => asset('assets/images/marcas/CAM2.svg')],
+            ['image' => asset('assets/images/marcas/FOGONDORADO.svg')],
+            ['image' => asset('assets/images/marcas/HONDA.svg')],
+            ['image' => asset('assets/images/marcas/MEGAPLAZA.svg')],
+            ['image' => asset('assets/images/marcas/MOBILE.svg')],
+            ['image' => asset('assets/images/marcas/MOTOCARMUNOS.svg')],
+            ['image' => asset('assets/images/marcas/SILVESTRE.svg')],
+            ['image' => asset('assets/images/marcas/STACION8.svg')],
+        ])->getData();
+
+        return view('welcome', compact('sliders', 'clientes'));
     }
 
     public function services()
@@ -50,16 +65,12 @@ class HomeController extends Controller
         return view('tracking');
     }
 
-    public function results(Request $request)
+    public function results(Order $order)
     {
-        $search = $request->input('search');
-        $order = Order::with(['trackings' => function ($query) {
+        $order->load(['items', 'payments', 'trackings' => function ($query) {
             $query->orderBy('date', 'desc');
-        }])->where('purchase', $search)->get()->first();
+        }]);
 
-        if (!$order) {
-            return back()->with('message', 'No se encontraron resultados.');
-        }
         return view('results', compact('order'));
     }
 

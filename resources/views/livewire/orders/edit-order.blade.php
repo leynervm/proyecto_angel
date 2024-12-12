@@ -167,6 +167,7 @@
         </div>
     </div>
 
+    <x-loading wire:loading.flex />
 
     <script>
         function deletepay() {

@@ -30,8 +30,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'whatsapp' => [
-        'phone' => env('PHONE_NUMBER'),
+    'links' => [
+        'whatsapp' => env('LINK_WHATSAPP'),
+        'facebook' => env('LINK_FACEBOOK'),
+        'instagram' => env('LINK_INSTAGRAM')
+    ],
+    
+    'apisnet' => [
+        'token' => env('TOKEN_APIS_NET'),
     ]
-
 ];

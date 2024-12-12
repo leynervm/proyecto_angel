@@ -34,8 +34,6 @@
         @endforeach
     </x-table>
 
-
-
     <x-dialog-modal wire:model="open" maxWidth="2xl" footerAlign="justify-end">
         <x-slot name="title">
             <h1 class="font-semibold text-[10px]">ACTUALIZAR SERVICIO</h1>
@@ -103,6 +101,8 @@
             </form>
         </x-slot>
     </x-dialog-modal>
+
+    <x-loading wire:loading.flex />
 
     <script>
         function editservice() {

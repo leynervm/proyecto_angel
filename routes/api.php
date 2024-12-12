@@ -19,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('order/search', function () {
-    return [];
-})->name('api.order.search');
+
+Route::middleware(['web'])->post('/admin/searchcliente', [ApiController::class, 'searchcliente'])->name('api.admin.searchcliente');
+Route::middleware(['web'])->post('/admin/searchorder', [ApiController::class, 'searchorder'])->name('api.admin.searchorder');

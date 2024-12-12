@@ -147,6 +147,7 @@
         </div>
     </section>
 
+
     <section class="block my-5 lg:my-20" data-aos="zoom-in">
         <div class="w-full max-w-6xl lg:px-6 mx-auto flex flex-col justify-center items-center">
             <h2 class="w-full block py-6 text-2xl lg:text-5xl text-center font-semibold text-blue-700">
@@ -154,27 +155,33 @@
 
 
             <div class="w-full relative px-8 lg:p-10">
-                <div class="w-full flex gap-10 overflow-x-hidden" id="sugerencias">
-                    @for ($i = 0; $i < 10; $i++)
-                        <div class="relative w-28 flex-shrink-0">
-                            <div class="relative w-full h-28">
+                <div x-data="{}" x-init="$nextTick(() => {
+                    let ul = $refs.logos;
+                    ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                    ul.nextSibling.setAttribute('aria-hidden', 'true');
+                })"
+                    class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
+                    <ul x-ref="logos"
+                        class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                        @foreach ($clientes as $image)
+                            <li class="relative size-32 flex-shrink-0">
                                 @php
-                                    $colorborder = $i % 2 == 0 ? 'border-orange-500' : 'border-blue-700';
+                                    $colorborder = $loop->index % 2 == 0 ? 'border-orange-500' : 'border-blue-700';
                                 @endphp
                                 <div
-                                    class="{{ $colorborder }} w-full overflow-hidden h-full bg-white rounded-full absolute border border-dashed flex items-center justify-center">
-                                    {{-- <img src="{{ asset('assets/images/cliente_logo.jpg') }}" alt="Product"
-                                        class="h-full w-full block object-cover overflow-hidden" /> --}}
+                                    class="absolute{{ $colorborder }} w-full overflow-hidden h-full bg-white rounded-full border border-dashed flex items-center justify-center">
+                                    <img src="{{ $image->image }}" alt="Product"
+                                        class="h-full w-full block object-scale-down overflow-hidden" />
                                 </div>
                                 <div
-                                    class="{{ $colorborder }} w-full h-full rounded-full absolute border-4 border-solid">
+                                    class="absolute top-0 left-0 {{ $colorborder }} w-full h-full rounded-full border-4 border-solid">
                                 </div>
-                            </div>
-                        </div>
-                    @endfor
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
 
-                <button id="leftsugerencias"
+                {{-- <button id="leftsugerencias"
                     class="absolute text-colorsubtitleform top-1/2 left-0 -translate-y-1/2 h-16 w-8 flex items-center justify-center disabled:opacity-25">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                         fill="currentColor" class="w-8 h-8 block text-blue-700">
@@ -189,38 +196,16 @@
                         <path
                             d="M8.19486 5.40705C8.52237 4.96235 9.14837 4.86736 9.59306 5.19488C9.93847 5.44927 10.2668 5.70372 10.5528 5.92689C11.1236 6.3724 11.8882 6.98573 12.6556 7.65208C13.4181 8.31412 14.2064 9.04815 14.8119 9.73344C15.1136 10.0749 15.3911 10.4279 15.5986 10.7721C15.7895 11.0888 16 11.524 16 12.0001C16 12.4762 15.7895 12.9115 15.5986 13.2282C15.3911 13.5724 15.1136 13.9253 14.8119 14.2668C14.2064 14.9521 13.4181 15.6861 12.6556 16.3482C11.8882 17.0145 11.1236 17.6278 10.5528 18.0734C10.2668 18.2965 9.93847 18.551 9.59307 18.8054C9.14837 19.1329 8.52237 19.0379 8.19486 18.5932C8.0632 18.4144 7.99983 18.2064 8.00001 18.0002L8 12.0001L8 6.00007C7.99983 5.79387 8.0632 5.58581 8.19486 5.40705Z" />
                     </svg>
-                </button>
+                </button> --}}
             </div>
-
-
-
-            {{-- grid grid-cols-[repeat(auto-fit,7rem)] grid-rows-[repeat(auto-fit,_100px)] --}}
-
-            {{-- <div
-                class="grid grid-flow-col auto-cols-[7rem] gap-10 overflow-hidden py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-
-                @for ($i = 0; $i < 10; $i++)
-                    <div class="relative w-28 flex-shrink-0">
-                        <div class="relative w-full h-28">
-                            <div
-                                class="w-full overflow-hidden h-full bg-white rounded-full absolute border border-dashed border-purple-500 flex items-center justify-center">
-                                <img src="{{ asset('assets/images/image.jpeg') }}" alt="Product"
-                                    class="h-full w-full block object-cover overflow-hidden" />
-                            </div>
-                            <div class="w-full h-full rounded-full absolute border-4 border-solid border-purple-500">
-                            </div>
-                        </div>
-                    </div>
-                @endfor
-            </div> --}}
+        </div>
     </section>
 
 
 
-
-    <button onclick="redirectWhatsapp()"
-        class="fixed bottom-4 right-4 z-[999] inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25d366]">
-        <div class="absolute z-10 top-0 left-0 w-full h-full rounded-full bg-[#25d366] animate-ping"></div>
+    <a target="_blank" href="{{ config('services.links.whatsapp') }}"
+        class="fixed bottom-4 left-4 z-[999] inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25d366]">
+        <div class="absolute z-10 top-0 left-0 w-full h-full rounded-full bg-[#25d366] animate-whatsapp"></div>
         <div class="relative z-20">
             <svg fill="#fff" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308.00 308.00" xml:space="preserve"
@@ -231,7 +216,7 @@
                     d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
             </svg>
         </div>
-    </button>
+    </a>
 
 
 

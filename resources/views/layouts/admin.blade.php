@@ -24,7 +24,7 @@
         <div x-show="isOpen()" class="fixed xl:static inset-0 flex bg-white bg-opacity-75 h-screen z-20">
             <div @click.away="handleAway()" class="w-52 text-white bg-principal shadow">
                 <div class="flex content-between">
-                    <div class="p-3 w-full text-lg sm:text-xl" href="/">{{ config('app.name') }}</div>
+                    <a class="p-3 w-full text-lg sm:text-xl" href="/">{{ config('app.name') }}</a>
                     <button @click.prevent="handleClose()" class="p-3 flex-1 flex items-center">
                         <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">

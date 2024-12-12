@@ -1,6 +1,5 @@
 <div x-data="data">
 
-    {{-- ADD PHONE_NUMBER="51970412547" --}}
     <x-button wire:click="$set('open', true)">NUEVO PEDIDO</x-button>
 
     <x-dialog-modal wire:model="open" maxWidth="4xl" footerAlign="justify-end">
@@ -13,13 +12,13 @@
                 <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                     <div class="">
                         <x-label value="DOCUMENTO CLIENTE :" />
-                        <x-input type="number" class="block w-full" wire:model.defer="document"
-                            onkeypress="return validarNumero(event,11)" />
+                        <x-input type="number" class="block w-full" x-model="document"
+                            x-on:keydown.enter.prevent="searchcliente" onkeypress="return validarNumero(event,11)" />
                         <x-input-error for="document" />
                     </div>
                     <div class="lg:col-span-2">
                         <x-label value="NOMBRES CLIENTE :" />
-                        <x-input class="block w-full" wire:model.defer="name" />
+                        <x-input class="block w-full" x-model="name" />
                         <x-input-error for="name" />
                     </div>
                     <div class="">
@@ -212,11 +211,17 @@
         </x-slot>
     </x-dialog-modal>
 
+    <x-loading style="display: flex" x-show="searching" />
+    <x-loading wire:loading.flex />
+
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('data', () => ({
                 open: false,
+                searching: false,
                 showformadd: true,
+                document: @entangle('document').defer,
+                name: @entangle('name').defer,
                 search: '',
                 services: [],
                 filteredServices: [],
@@ -242,6 +247,31 @@
                             this.importe = value * this.cantidad;
                         }
                     })
+                },
+                searchcliente() {
+                    this.searching = true;
+                    fetch(`{{ route('api.admin.searchcliente') }}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            },
+                            body: JSON.stringify({
+                                document: this.document
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                this.name = data.name;
+                            } else {
+                                alert(data.error);
+                            }
+                            this.searching = false;
+                        }).catch((e) => {
+                            console.log(e);
+                            this.searching = false;
+                        });
                 },
                 numeric() {
 

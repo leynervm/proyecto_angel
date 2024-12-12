@@ -67,6 +67,8 @@
         </x-slot>
     </x-dialog-modal>
 
+    <x-loading wire:loading.flex />
+
     <script>
         function loadimage() {
             return {
