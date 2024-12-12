@@ -1,4 +1,4 @@
-<div>
+<div class="relative">
     <div
         class="w-full p-3 shadow rounded-xl border bg-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         <div class="">
@@ -18,7 +18,6 @@
             <x-input-error for="methodpay" />
         </div>
     </div>
-
 
     @if ($payments->hasPages())
         <div class="w-full mt-3">
@@ -50,4 +49,6 @@
             </tr>
         @endforeach
     </x-table>
+
+    <x-loading wire:loading.flex />
 </div>

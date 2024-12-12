@@ -13,7 +13,8 @@
                 <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                     <div class="">
                         <x-label value="DOCUMENTO CLIENTE :" />
-                        <x-input class="block w-full" wire:model.defer="document" maxlength="11" />
+                        <x-input type="number" class="block w-full" wire:model.defer="document"
+                            onkeypress="return validarNumero(event,11)" />
                         <x-input-error for="document" />
                     </div>
                     <div class="lg:col-span-2">
@@ -82,15 +83,14 @@
                                 x-on:keydown.enter.prevent="openedWithKeyboard = true"
                                 x-on:keydown.space.prevent="openedWithKeyboard = true"
                                 x-bind:aria-expanded="isOpen || openedWithKeyboard"
-                                x-bind:aria-label="producto_id ? selectedOption.name : 'Seleccionar'">
+                                x-bind:aria-label="service_id ? selectedOption.name : 'Seleccionar'">
                                 <span class="text-xs w-full text-left truncate font-normal text-colorsubtitleform"
-                                    x-text="producto_id ? selectedOption.name : 'Seleccionar...'"></span>
+                                    x-text="service_id ? selectedOption.name : 'Seleccionar...'"></span>
 
                                 <svg class="w-5 h-5 block" viewBox="0 0 20 20" fill="none" stroke="currentColor"
                                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M7 7l3-3 3 3m0 6l-3 3-3-3" />
                                 </svg>
-
                             </button>
 
                             <input id="state" name="state" autocomplete="off" x-ref="hiddenTextField"
@@ -103,7 +103,7 @@
                                 x-on:keydown.up.prevent="$focus.wrap().previous()" x-transition
                                 x-trap="openedWithKeyboard">
 
-                                <div class="">
+                                <div class="" wire:ignore>
                                     <div class="relative p-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                             stroke="currentColor" fill="none" stroke-width="1.5"
@@ -113,23 +113,23 @@
                                                 d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                                         </svg>
                                         <x-input class="w-full block p-2 pl-11 pr-4" name="search"
-                                            aria-label="Search" @input="getFilteredOptions(search)" x-ref="search"
+                                            aria-label="Search" @input="getFilteredOptions" x-ref="search"
                                             x-model="search" placeholder="Search" autocomplete="off"
-                                            {{--  @input.debounce.300ms="fetchProducts" --}} />
+                                            {{--  @input.debounce.300ms="fetchServices" --}} />
                                     </div>
 
                                     <ul class="flex max-h-60 p-1 flex-col overflow-y-auto">
                                         <li class="hidden px-4 py-2 text-sm text-neutral-900 "
                                             x-ref="noResultsMessage">
-                                            <span>No matches found</span>
+                                            <span>No se encontraron resultados</span>
                                         </li>
-                                        <template x-for="(item, index) in filteredProducts"
-                                            x-bind:key="item.id">
+                                        <template x-for="(item, index) in filteredServices" key="item.id">
                                             <li class="combobox-option rounded-md inline-flex cursor-pointer justify-between items-center gap-2 p-1 text-xs text-neutral-900 hover:bg-neutral-300 focus-visible:border-none focus-visible:bg-neutral-300 focus-visible:outline-none"
-                                                role="option" x-on:click="setSelectedOption(item)"
+                                                x-show="filteredServices.length > 0" role="option"
+                                                x-on:click="setSelectedOption(item)"
                                                 x-on:keydown.enter="setSelectedOption(item)"
                                                 x-bind:id="'option-' + index" tabindex="0"
-                                                :class="(producto_id == item.id) ? 'bg-neutral-300' : 'bg-white'">
+                                                :class="(service_id == item.id) ? 'bg-neutral-300' : 'bg-white'">
 
                                                 <div class="w-full flex items-center gap-2">
                                                     <div class="w-16 xs:w-28 h-16 xs:h-20 rounded-lg">
@@ -158,12 +158,12 @@
 
                                                     <div class="flex-1 w-full text-[10px] sm:text-xs">
                                                         <p class="text-neutral-900 leading-3"
-                                                            x-bind:class="producto_id == item.id ? 'font-bold' : null"
+                                                            x-bind:class="service_id == item.id ? 'font-bold' : null"
                                                             x-text="item.name"></p>
                                                         <p class="text-neutral-700 text-[10px] font-semibold"
                                                             x-text="item.price"></p>
                                                         <span class="sr-only"
-                                                            x-text="producto_id == item.id ? 'selected' : null"></span>
+                                                            x-text="service_id == item.id ? 'selected' : null"></span>
                                                     </div>
                                                 </div>
                                             </li>
@@ -178,14 +178,16 @@
                     <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-2">
                         <div class="">
                             <x-label value="CANTIDAD" />
-                            <x-input class="block w-full" x-model="cantidad" wire:model.defer="cantidad"
-                                wire:keydown.enter.prevent="addservice" />
+                            <x-input type="number" class="block w-full" x-model="cantidad"
+                                wire:model.defer="cantidad" wire:keydown.enter.prevent="addservice"
+                                onkeypress="return validarDecimal(event,12)" />
                             <x-input-error for="cantidad" />
                         </div>
                         <div class="">
                             <x-label value="PRECIO :" />
-                            <x-input class="block w-full" x-model="price" wire:model.defer="price"
-                                wire:keydown.enter.prevent="addservice" />
+                            <x-input type="number" class="block w-full" x-model="price" wire:model.defer="price"
+                                wire:keydown.enter.prevent="addservice"
+                                onkeypress="return validarDecimal(event,11)" />
                             <x-input-error for="price" />
                         </div>
                         <div class="sm:col-span-2 md:col-span-3">
@@ -216,19 +218,19 @@
                 open: false,
                 showformadd: true,
                 search: '',
-                products: [],
-                filteredProducts: [],
+                services: [],
+                filteredServices: [],
                 isOpen: false,
                 openedWithKeyboard: false,
                 selectedOption: null,
-                producto_id: @entangle('service_id').defer,
+                service_id: @entangle('service_id').defer,
                 price: @entangle('price').defer,
                 importe: 0,
                 amount: @entangle('amount').defer,
                 cantidad: @entangle('cantidad').defer,
                 detalle: @entangle('detalle').defer,
                 init() {
-                    this.fetchProducts();
+                    this.fetchServices();
                     this.$watch("cantidad", (value) => {
                         if (value > 0) {
                             this.importe = value * this.price;
@@ -257,12 +259,12 @@
                     this.selectedOption = null
                     this.isOpen = false
                     this.openedWithKeyboard = false
-                    this.producto_id = null
+                    this.service_id = null
                     this.price = 0
                     this.subtotal = 0
                     this.$wire.$refresh()
                 },
-                fetchProducts() {
+                fetchServices() {
                     this.error = '',
                         fetch(`{{ route('admin.services.json') }}`, {
                             method: 'POST',
@@ -276,12 +278,11 @@
                         })
                         .then(response => response.json())
                         .then(data => {
-                            // console.log(data);
                             if (data.error) {
                                 this.error = data.error;
                             } else {
-                                this.products = data;
-                                this.filteredProducts = data;
+                                this.services = data;
+                                this.filteredServices = data;
                             }
                         })
                         .catch(() => {
@@ -290,24 +291,18 @@
                         });
                 },
                 setSelectedOption(option) {
-                    // console.log(option);
-                    this.producto_id = option.id
+                    this.service_id = option.id
                     this.selectedOption = option
                     this.price = option.price
-                    // this.cantidad = 1
                     this.isOpen = false
                     this.openedWithKeyboard = false
                     this.$refs.hiddenTextField.value = option.value
-                    // this.almacens = almacens;
-                    // this.$wire.almacens = almacens
-                    // this.$wire.$refresh()
-
                 },
-                getFilteredOptions(query) {
-                    this.filteredProducts = this.products.filter((product) =>
-                        product.name.toLowerCase().includes(query.toLowerCase()));
-
-                    if (this.filteredProducts.length === 0) {
+                getFilteredOptions() {
+                    this.filteredServices = this.services.filter((item) =>
+                        item.name.toLowerCase().includes(this.search.toLowerCase()));
+                    console.log(this.filteredServices);
+                    if (this.filteredServices.length === 0) {
                         this.$refs.noResultsMessage.classList.remove('hidden');
                     } else {
                         this.$refs.noResultsMessage.classList.add('hidden');

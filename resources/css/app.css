@@ -42,6 +42,16 @@
     font-style: normal;
 }
 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* input[type='number'].input-number-none { */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
 .contenedor {
     @apply w-full max-w-[1280px] mx-auto;
 }
@@ -194,14 +204,14 @@
 
 /* SIDEBAR */
 .item-link-sidebar {
-    @apply flex items-center font-semibold text-sm leading-none text-principal px-4 py-3 focus:outline-none focus:ring-0 transition ease-out duration-150;
+    @apply flex items-center font-semibold text-sm leading-none text-white px-4 py-3 focus:outline-none focus:ring-0 transition ease-out duration-150;
 }
 
 .item-link-sidebar:hover {
-    @apply bg-blue-200 ;
+    @apply bg-blue-900;
 }
 
 .item-link-sidebar.item-sidebar-active {
-    @apply bg-principal text-white;
+    @apply bg-secondary text-white;
 }
 /* END SIDEBAR */

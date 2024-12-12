@@ -34,7 +34,7 @@
                     {{ number_format($item->amount, 2, '.', ', ') }}
                 </td>
                 <td class="p-2.5 text-center">
-                    <a href="{{ route('dashboard.orders.show', $item) }}"
+                    <a href="{{ route('admin.orders.show', $item) }}"
                         class="text-white bg-blue-700 p-2.5 rounded-lg inline-block">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="block w-4 h-4">

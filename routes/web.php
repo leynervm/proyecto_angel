@@ -28,7 +28,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
         Route::get('/', [AdminController::class, 'dashboard'])->name('admin');
         Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
-        Route::get('/orders/{order}/show', [OrderController::class, 'show'])->name('dashboard.orders.show');
+        Route::get('/orders/{order}/show', [OrderController::class, 'show'])->name('admin.orders.show');
 
         Route::get('/services', [AdminController::class, 'services'])->name('admin.services');
         Route::get('/estados', [AdminController::class, 'estados'])->name('admin.estados');

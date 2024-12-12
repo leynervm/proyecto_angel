@@ -19,7 +19,8 @@
 
             <div class="">
                 <x-label value="DOCUMENTO CLIENTE :" />
-                <x-input class="block w-full" type="number" wire:model.defer="order.document" maxlength="11" />
+                <x-input class="block w-full" type="number" wire:model.defer="order.document"
+                    onkeypress="return validarNumero(event,11)" />
                 <x-input-error for="order.document" />
             </div>
             <div class="sm:col-span-2">
