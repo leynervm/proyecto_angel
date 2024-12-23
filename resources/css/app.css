@@ -179,7 +179,7 @@ input[type='number'] {
 }
 
 .item-link-header {
-    @apply p-2.5 rounded-md cursor-pointer uppercase truncate text-wrap text-xs sm:text-sm md:text-lg !leading-none font-semibold text-center transition ease-out duration-150;
+    @apply p-2 xs:p-2.5 rounded-md cursor-pointer uppercase truncate text-wrap text-[10px] xs:text-xs sm:text-sm md:text-lg md:!leading-none font-semibold text-center transition ease-out duration-150;
 }
 
 .item-link-header:hover,

@@ -3,9 +3,9 @@
 
 
 
-    <div class="relative min-h-[45svh] xs:min-h-[35svh] lg:min-h-[40svh] w-full">
+    <div class="relative w-full">
         <div
-            class="absolute w-full h-full flex flex-col sm:flex-row inset-0 z-10 p-3 lg:p-8 text-center self-center gap-3 bg-gradient-to-t from-slate-200/85 to-transparent">
+            class="flex flex-col sm:flex-row inset-0 z-10 p-3 lg:p-8 lg:py-12 text-center self-center gap-3 bg-gradient-to-t from-slate-200/85 to-transparent">
             <h3
                 class="w-full sm:flex-1 self-center text-justify text-balance text-lg lg:text-3xl font-bold text-neutral-600">
                 En <b class="text-primary italic">PubliCalin</b> estamos comprometidos contigo, ofreciéndote
@@ -14,7 +14,7 @@
             </h3>
             <div class="w-full max-w-xs lg:max-w-md flex-shrink-0 self-center">
                 <img src="{{ asset('assets/images/PLOTER.png') }}" alt=""
-                    class="w-full block h-48 lg:h-64 object-scale-down object-right">
+                    class="w-full block h-40 sm:h-48 lg:h-64 object-scale-down object-right">
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
                     Put clarity at the center of your website</h2>
             </div> --}}
 
-            <div class="w-full grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10" data-aos-id-featbl="">
+            <div class="w-full grid grid-cols-2 xs:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10" data-aos-id-featbl="">
                 <div class="cardbox-welcome" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/IMPRESIONES.svg') }}" alt=""
                         class="w-auto h-28 sm:h-40 block">
@@ -150,31 +150,16 @@
 
 
             <div class="w-full relative px-1 lg:p-10">
-                <div x-data="{}" x-init="$nextTick(() => {
-                    let ul = $refs.logos;
-                    ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                    ul.nextSibling.setAttribute('aria-hidden', 'true');
-                })"
-                    class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10px,_black_calc(100%-10px),transparent_100%)]">
-                    <ul x-ref="logos"
-                        class="flex items-center justify-center md:justify-start [&_li]:mx-4 sm:[&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                        @foreach ($clientes as $image)
-                            <li class="relative size-28 sm:size-32 flex-shrink-0">
-                                @php
-                                    $colorborder = $loop->index % 2 == 0 ? 'border-orange-500' : 'border-blue-700';
-                                @endphp
-                                <div
-                                    class="absolute {{-- {{ $colorborder }} --}} w-full overflow-hidden h-full {{-- bg-white rounded-full border border-dashed --}} flex items-center justify-center">
-                                    <img src="{{ $image->image }}" alt="Product"
-                                        class="h-full w-full block object-scale-down overflow-hidden" />
-                                </div>
-                                {{-- <div
-                                    class="absolute top-0 left-0 {{ $colorborder }} w-full h-full rounded-full border-4 border-solid">
-                                </div> --}}
-                            </li>
-                        @endforeach
-                    </ul>
+                <div class="grid grid-cols-4 sm:grid-cols-6 gap-3 sm:gap-5 self-center">
+                    @foreach ($clientes as $image)
+                        <div class="relative flex-shrink-0 saturate-0">
+                            <img src="{{ $image->image }}" alt="Product"
+                                class="h-full max-h-16 w-full block object-scale-down overflow-hidden" />
+                        </div>
+                    @endforeach
                 </div>
+
+                
 
                 {{-- <button id="leftsugerencias"
                     class="absolute text-colorsubtitleform top-1/2 left-0 -translate-y-1/2 h-16 w-8 flex items-center justify-center disabled:opacity-25">
