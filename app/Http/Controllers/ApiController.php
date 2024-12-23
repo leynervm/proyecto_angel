@@ -100,7 +100,7 @@ class ApiController extends Controller
     {
         $purchase = $request->input('search');
         $order = Order::where('purchase', trim($purchase))->first(); //trim(mb_strtoupper($purchase, "UTF-8"))
-        if ($order) {
+        if (!empty($order)) {
             return response()->json([
                 'success' => true,
                 'redirect' => route('orders.search.results', $order),

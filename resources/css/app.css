@@ -25,30 +25,30 @@
 
 /* latin */
 @font-face {
-    font-family: "Signika Negative";
+    font-family: 'Signika Negative';
     font-style: normal;
     font-weight: 300 700;
     font-display: swap;
-    src: url("/assets/fonts/Signika_Negative/signika_negative.woff2")
-        format("woff2");
+    src: url('/assets/fonts/Signika_Negative/signika_negative.woff2')
+        format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
         U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 * {
-    font-family: "Signika Negative", sans-serif;
+    font-family: 'Signika Negative', sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 /* input[type='number'].input-number-none { */
-input[type="number"] {
+input[type='number'] {
     -moz-appearance: textfield;
 }
 
@@ -130,10 +130,6 @@ input[type="number"] {
     right: 0 !important;
 }
 
-.card-welcome {
-    box-shadow: 10px 5px 0 0px #ccc;
-}
-
 @keyframes pingwhatsapp {
     75%,
     100% {
@@ -183,12 +179,27 @@ input[type="number"] {
 }
 
 .item-link-header {
-    @apply p-2.5 rounded-md cursor-pointer truncate text-wrap text-lg !leading-none font-semibold text-center transition ease-out duration-150;
+    @apply p-2.5 rounded-md cursor-pointer uppercase truncate text-wrap text-xs sm:text-sm md:text-lg !leading-none font-semibold text-center transition ease-out duration-150;
 }
 
 .item-link-header:hover,
 .item-link-header.link-header-active {
     @apply bg-secondary text-white;
+}
+
+.cardbox-welcome {
+    box-shadow: 5px 2px 0 0px #ccc;
+    @apply bg-white flex flex-col p-5 sm:p-8 rounded-lg lg:rounded-xl;
+}
+
+@media (min-width: 475px) {
+    .cardbox-welcome {
+        box-shadow: 10px 5px 0 0px #ccc;
+    }
+}
+
+.title-cardbox-shadow {
+    @apply font-bold text-lg sm:text-3xl text-center text-principal leading-none block;
 }
 
 /* END HEADER */

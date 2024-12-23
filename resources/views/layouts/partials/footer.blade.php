@@ -31,7 +31,7 @@
                 </div>
                 <div class="my-3">
                     <ul class="text-white text-xs md:text-sm font-medium">
-                        <li class="flex items-center gap-1">
+                        <li class="flex items-center justify-center lg:justify-start gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd"
                                 clip-rule="evenodd" fill="currentColor" class="block size-4 text-white">
                                 <path
@@ -39,7 +39,7 @@
                             </svg>
                             996 976 634
                         </li>
-                        <li class="flex items-center gap-1">
+                        <li class="flex items-center justify-center lg:justify-start gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd"
                                 clip-rule="evenodd" fill="currentColor" class="block size-4 text-white">
                                 <path
@@ -47,7 +47,7 @@
                             </svg>
                             976 120 205
                         </li>
-                        <li class="flex items-center gap-1">
+                        <li class="flex items-center justify-center lg:justify-start gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                 fill-rule="evenodd" clip-rule="evenodd" class="block size-4 text-white">
                                 <path

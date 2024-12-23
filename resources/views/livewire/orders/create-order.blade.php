@@ -250,7 +250,7 @@
                 },
                 searchcliente() {
                     this.searching = true;
-                    fetch(`{{ route('api.admin.searchcliente') }}`, {
+                    fetch(`{{ route('admin.searchcliente') }}`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

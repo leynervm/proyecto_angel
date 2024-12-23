@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
@@ -36,6 +37,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('/historial-pagos', [AdminController::class, 'payments'])->name('admin.payments');
 
         Route::post('/json/services', [HomeController::class, 'jsonservices'])->name('admin.services.json');
+    
+        Route::post('/searchcliente', [ApiController::class, 'searchcliente'])->name('admin.searchcliente');
     });
 
 

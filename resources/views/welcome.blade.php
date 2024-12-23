@@ -3,77 +3,72 @@
 
 
 
-    <div class="relative min-h-[60svh] w-full">
+    <div class="relative min-h-[45svh] xs:min-h-[35svh] lg:min-h-[40svh] w-full">
         <div
-            class="absolute w-full h-full flex flex-col lg:flex-row inset-0 z-10 p-8 text-center self-center gap-3 bg-gradient-to-t from-slate-200/85 to-transparent">
+            class="absolute w-full h-full flex flex-col sm:flex-row inset-0 z-10 p-3 lg:p-8 text-center self-center gap-3 bg-gradient-to-t from-slate-200/85 to-transparent">
             <h3
-                class="w-full flex-1 self-center text-justify text-balance text-lg lg:text-3xl font-bold text-neutral-600 lg:px-8">
+                class="w-full sm:flex-1 self-center text-justify text-balance text-lg lg:text-3xl font-bold text-neutral-600">
                 En <b class="text-primary italic">PubliCalin</b> estamos comprometidos contigo, ofreciéndote
                 <b class="text-secondary">soluciones que van mas allá de tus expectativas</b>,
                 poniendo a tu disposición equipo de vanguardia tecnológica y personal altamente calificado.
             </h3>
-            <div class="w-full max-w-xl flex-shrink-0 self-center">
+            <div class="w-full max-w-xs lg:max-w-md flex-shrink-0 self-center">
                 <img src="{{ asset('assets/images/PLOTER.png') }}" alt=""
-                    class="w-full h-48 lg:h-64 object-scale-down">
+                    class="w-full block h-48 lg:h-64 object-scale-down object-right">
             </div>
         </div>
     </div>
 
 
     <section class="w-full block my-10 lg:my-20">
-        <div class="max-w-6xl px-6 mx-auto">
+        <div class="max-w-6xl px-3 sm:px-6 mx-auto">
             {{-- <div class="text-center max-w-3xl pb-20 mx-auto" data-aos="zoom-in">
                 <h2 class="text-5xl leading-10 font-semibold text-blue-700">
                     Put clarity at the center of your website</h2>
             </div> --}}
 
-            <div class="w-full grid grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10" data-aos-id-featbl="">
-                <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
+            <div class="w-full grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10" data-aos-id-featbl="">
+                <div class="cardbox-welcome" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/IMPRESIONES.svg') }}" alt=""
                         class="w-auto h-28 sm:h-40 block">
-                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Impresiones
-                    </h1>
+                    <h1 class="title-cardbox-shadow">
+                        Impresiones</h1>
                 </div>
 
-                <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
+                <div class="cardbox-welcome" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/LETREROS.svg') }}" alt=""
                         class="w-auto h-28 sm:h-40 block">
-                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Letreros</h1>
+                    <h1 class="title-cardbox-shadow">
+                        Letreros</h1>
                 </div>
 
-                <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
+                <div class="cardbox-welcome" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/PLOTEOYCORTE.svg') }}" alt=""
                         class="w-auto h-28 sm:h-40 block">
-                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Ploteo y corte
-                    </h1>
+                    <h1 class="title-cardbox-shadow">
+                        Ploteo y corte</h1>
                 </div>
 
-                <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
+                <div class="cardbox-welcome" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/CORTELASER.svg') }}" alt=""
                         class="w-auto h-28 sm:h-40 block">
-                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Corte láser
-                    </h1>
+                    <h1 class="title-cardbox-shadow">
+                        Corte láser</h1>
                 </div>
 
-                <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
+                <div class="cardbox-welcome" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <img src="{{ asset('assets/images/DISENOGRAFICO.svg') }}" alt=""
                         class="w-auto h-28 sm:h-40 block">
-                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Diseño gráfico
-                    </h1>
+                    <h1 class="title-cardbox-shadow">
+                        Diseño gráfico</h1>
                 </div>
 
 
-                <div class="bg-white flex flex-col p-5 sm:p-8 rounded-lg card-welcome" data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
-                    <img src="{{ asset('assets/images/ATENCIONPERSONALIZADA.svg') }}" alt=""
+                <div class="cardbox-welcome" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <img src="{{ asset('assets/images/VENTAINSUMOS.svg') }}" alt=""
                         class="w-auto h-28 sm:h-40 block">
-                    <h1 class="font-bold text-lg sm:text-3xl text-center text-primary leading-none block">Atención
-                        personalizada</h1>
+                    <h1 class="title-cardbox-shadow">
+                        Venta de Insumos</h1>
                 </div>
             </div>
         </div>
@@ -83,7 +78,7 @@
     {{-- SECTION DE DATAS ICON --}}
     <section class="w-full block">
         <div
-            class="gap-8 sm:gap-10 flex flex-wrap justify-center sm:justify-between items-start py-8 px-4 mx-auto max-w-6xl lg:py-16 lg:px-6">
+            class="gap-8 sm:gap-10 flex flex-wrap justify-center sm:justify-between items-start py-8 px-1 mx-auto max-w-6xl lg:py-16 lg:px-6">
             <div class="relative w-28 lg:w-40">
                 <div class="relative w-28 lg:w-40 h-28 lg:h-40">
                     <div
@@ -154,28 +149,28 @@
                 Nuestros Clientes</h2>
 
 
-            <div class="w-full relative px-8 lg:p-10">
+            <div class="w-full relative px-1 lg:p-10">
                 <div x-data="{}" x-init="$nextTick(() => {
                     let ul = $refs.logos;
                     ul.insertAdjacentHTML('afterend', ul.outerHTML);
                     ul.nextSibling.setAttribute('aria-hidden', 'true');
                 })"
-                    class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
+                    class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10px,_black_calc(100%-10px),transparent_100%)]">
                     <ul x-ref="logos"
-                        class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                        class="flex items-center justify-center md:justify-start [&_li]:mx-4 sm:[&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                         @foreach ($clientes as $image)
-                            <li class="relative size-32 flex-shrink-0">
+                            <li class="relative size-28 sm:size-32 flex-shrink-0">
                                 @php
                                     $colorborder = $loop->index % 2 == 0 ? 'border-orange-500' : 'border-blue-700';
                                 @endphp
                                 <div
-                                    class="absolute{{ $colorborder }} w-full overflow-hidden h-full bg-white rounded-full border border-dashed flex items-center justify-center">
+                                    class="absolute {{-- {{ $colorborder }} --}} w-full overflow-hidden h-full {{-- bg-white rounded-full border border-dashed --}} flex items-center justify-center">
                                     <img src="{{ $image->image }}" alt="Product"
                                         class="h-full w-full block object-scale-down overflow-hidden" />
                                 </div>
-                                <div
+                                {{-- <div
                                     class="absolute top-0 left-0 {{ $colorborder }} w-full h-full rounded-full border-4 border-solid">
-                                </div>
+                                </div> --}}
                             </li>
                         @endforeach
                     </ul>
